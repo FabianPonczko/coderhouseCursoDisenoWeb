@@ -4,41 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concesionaria</title>
-    <link rel="stylesheet" href="./css/estilos.css">
+    <title>FoXx Computación</title>
+    <link rel="stylesheet" href="./css/estilos_grid.css">
 </head>
 <body>
     <header>
-            <nav>
-                <div class="titulo">
-                    <h1>--FoXx ComputacióN--</h1>
-                </div>
-                <img src="./assets/android-chrome-192x192.png" alt="" class="logo" >
-                <ul class ="navbar">
-                    <li><a href="./inicio.html">Home</a></li>
-                    <li><a href="./nosotros.html">Nosotros</a></li>
-                    <li><a href="./consulta.html">Consultas</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="">Ubicación</a></li>
-                </ul>
-            </nav>
+        <nav>
+            <img class="logo" src="./assets/android-chrome-192x192.png" alt="">
+            <div class="titulo">
+                <h1>- FoXx Computación -</h1>
+            </div>
+        
+            <ul class ="navbar">
+                <li class="navbar_menu"><a href="#">Contacto</a></li>
+                    <ul class="menu">
+                        <li><a href="./nosotros.html">Nosotros</a></li>
+                        <li><a href="./consulta.html">Consultas</a></li>
+                        <li><a href="./contacto.html">Contacto</a></li>
+                        <li><a href="./ubicacion.html">Ubicación</a></li>
+                    </ul>
+                <li class="oculta_menu"><a href="./inicio.html">Home</a></li>
+                <li class="oculta_menu"><a href="./nosotros.html">Nosotros</a></li>
+                <li class="oculta_menu"><a href="./consulta.html">Consultas</a></li>
+                <li class="oculta_menu"><a href="./ubicacion.html">Ubicación</a></li>
+            </ul>
+        </nav>
             
         </div>
         
     </header>
     <main>
-        <section>
-          <div class="div_form">
-            <form action="" method="get">
-                  <div class="nombres">
-                      <input type="text">
-                      <input type="text">
-                  </div><input type="text">
-                  <input type="text">
-                  <input type="text">
-                  <input type="button" value="submit">
-                </form>
+        <section class="form">
+            <h2>Formulario de contacto</h2>
             </div>
+            <br>
+            <form action="" method="get" enctype="text/plain" >
+                <fieldset>
+                    <legend>Info Personal</legend>
+                    <br>
+                    <div>
+                        <label for="userName">Nombre:</label>
+                        <input type="text" name="userName" id="userName" placeholder="Coloque su nombre aqui...">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="userApellido">Apellido:</label>
+                        <input type="text" name="userApellido" id="userApellido" placeholder="Coloque su apellido aqui... "">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="userEstado">Estado Civil</label>
+                        <select name="userEstado" id="userEstado">
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="userMail">Correo electronico:</label>
+                        <input type="email" name="userMail"  id="userMail" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="userCheck">Desea recibir Newsletter</label>
+                        <input type="checkbox" name="userCheck" id="userCheck">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="userComentario"></label>
+                        <textarea name="userComentario" id="UserComentario" cols="30" rows="10" placeholder="Comentario..."></textarea>
+                    </div>
+                    <br>
+                </fieldset>
+                <br>
+                <input type="submit" value="Enviar Formulario">
+                <input type="reset" value="Limpiar Formulario">
+               
+            </form>
         </section>
       
     </main>

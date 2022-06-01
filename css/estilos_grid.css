@@ -88,7 +88,7 @@ li a:hover{
 }
 .destacado img{
     border-radius: 15px;
-    width: 300px;
+    width: 20vw;
     margin: 30px;
     box-shadow: 0px 0px 10px 5px rgb(150, 150, 150);
 }
@@ -109,6 +109,10 @@ li a:hover{
     padding: 15px;
     justify-content: space-around;
     
+}
+.footer_div ul{
+    margin-left: 10px;
+    width: 200px;
 }
 .footer_div p{
     width:50%;
@@ -165,42 +169,68 @@ li a:hover{
 }
 /*pestaña consultas*/
 .consulta{
-    margin: 100px 0px;
+    margin: 100px 150px;
     text-align: center;
 }
 .consulta p{
-    margin: auto;
-    width: 800px;
     margin-top: 50px;
+    border-top: 1px solid rgba(130, 134, 165, 0.47);
+    border-bottom: 1px solid rgba(130, 134, 165, 0.47);
 }
 
 .menu{
     display: none;
 }
 
+/* pestaña contacto*/
 
+.form{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form fieldset{
+    text-align: center;
+    width: 50vw;
+}
+
+
+/* activa menu oculto*/
 .navbar:hover .menu{
     
     display: block;
     position: absolute;
+    text-align: center;
     left: -20px;
     top: 15px;
-    background-color: rgb(27, 17, 4);
+    background-color:rgba(16, 15, 39, 0.927);
 }
 .menu:hover{
     display: block;
+    
 }
 
     .menu a{
-    color: aqua;
+    color:antiquewhite;
 }
+/* pestaña ubicación*/
+.ubicacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ubicacion h3{
+    margin: 35px 0px;
+}
+
 @media screen and (max-width:426px){
     .oculta_menu{
         display: none;
     }
     .navbar{
-        right: 10px;
-        border-bottom: 3px double rgb(19, 206, 100);
+        right: 5px;
+        border-bottom: 1px double rgb(62, 66, 64);
     }
     nav li a{
         padding-right: 0;
@@ -210,6 +240,37 @@ li a:hover{
     .titulo{
         font-size: .7rem;
     }
+    .destacado {
+        /* width: 100vw; */
+        margin: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction:column-reverse;
+    }
+    .texto_450 {
+        margin-left: 0px;
+    }
+    .destacado img {
+        width: 80vw;
+    }
+    .footer_div {
+    display: block;
+    }
+    .footer_div p{
+        width: 100%;
+        }
+/* paguina de nosotros */
+    .logo_grande{
+        display:none;
+    }
+    .main_div{
+        font-size: 1rem;
+        padding: 1rem;
+    }
+     /* consulta*/
+     .consulta{
+        margin: 80px 30px;
+    }
 }
 @media screen and (min-width:426px){
     .titulo{
@@ -218,7 +279,17 @@ li a:hover{
     .menu li{
         display: none;
     }
-    
+    .destacado {
+        margin: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction:column-reverse;
+    }
+    .destacado img {
+        width: 40vw;
+    }
+   
+
 }
 @media screen and (min-width:1024px){
     .titulo{
@@ -226,5 +297,12 @@ li a:hover{
     }
     .menu{
         display: none;
+    }
+    .destacado {
+        /* width: 100vw; */
+        margin: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction:row;
     }
 }
