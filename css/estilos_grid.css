@@ -253,7 +253,7 @@ li a:hover{
     }
 
     .titulo{
-        font-size: .8rem;
+        font-size: .7rem;
     }
     .destacado {
         /* width: 100vw; */
@@ -292,7 +292,7 @@ li a:hover{
     display: none;
   }  
   .titulo{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .menu li{
         display: none;
@@ -311,7 +311,7 @@ li a:hover{
 }
 @media screen and (min-width:1024px){
     .titulo{
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     .menu{
         display: none;
@@ -608,7 +608,7 @@ li a:hover{
           position: absolute;
           color: rgb(210, 233, 30);
           width: fit-content;
-          left: calc(100vw - 120px);
+          left: calc(100vw - 125px);
           margin-bottom: 40px;
           padding: 1px;
           background-color: #f31111;
