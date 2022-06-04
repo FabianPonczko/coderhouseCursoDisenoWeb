@@ -1,7 +1,7 @@
 ﻿*{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 body{
     background-color: rgb(222, 222, 222);
@@ -239,6 +239,8 @@ li a:hover{
     padding: 5px;
     border: rgb(16 15 39 / 93%) solid 1px;
 }
+
+
 @media screen and (max-width:426px){
     .oculta_menu{
         display: none;
@@ -274,6 +276,10 @@ li a:hover{
     .footer_div p{
         width: 100%;
         }
+    .section_destacado {
+          display: flex;
+          justify-content: center;
+    }
 /* paguina de nosotros */
     .logo_grande{
         display:none;
