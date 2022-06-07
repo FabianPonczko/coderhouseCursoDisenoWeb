@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,59 +10,75 @@
 </head>
 <body>
     <header>
-            <nav>
-                <img class="logo bounce-in-right" src="./assets/android-chrome-192x192.png" alt="">
-                <div class="titulo">
-                    <h1 class="slide-bottom" >- FoXx Computación -</h1>
-                </div>
-                <span class="fade-out">Aqui esta el menú</span>
-            
-                <ul class ="navbar">
-                    <li class="navbar_menu"><a href="#">Home</a></li>
-                    <ul class="menu">
-                            <li><a href="./nosotros.html">Nosotros</a></li>
-                            <li><a href="./consulta.html">Consultas</a></li>
-                            <li><a href="./contacto.html">Contacto</a></li>
-                            <li><a href="./ubicacion.html">Ubicación</a></li>
-                        </ul>
-                    <li class="oculta_menu"><a href="./nosotros.html">Nosotros</a></li>
-                    <li class="oculta_menu"><a href="./consulta.html">Consultas</a></li>
-                    <li class="oculta_menu"><a href="./contacto.html">Contacto</a></li>
-                    <li class="oculta_menu"><a href="./ubicacion.html">Ubicación</a></li>
+        <nav class="navbar navbar-expand-lg navbar-dark"  style="background-color: rgba(16, 15, 39, 0.927);">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">FoXx Computación</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText" >
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-scroll" >
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./nosotros.html">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./consulta.html">Consultas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./contacto.html">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./ubicacion.html">Ubicación</a>
+                  </li>
                 </ul>
-            </nav>
-            
+              </div>
             </div>
+          </nav>
         
     </header>
     <main>
         
         
-        <section class="conteiner rotate-hor-center">
-            <div class="card  rotate-hor-center1 fade-in">
-                <a href=""><img src="./assets/impresora.jpeg" alt="" ></a>
-                <h3>Articulo 1</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-            </div>
-            <div class="card  rotate-hor-center2 fade-in">
-                <a href=""><img src="./assets/auricular.jpeg" alt=""></a>
-                <h3>Articulo 2</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-            </div>
-            <div class="card  rotate-hor-center3 fade-in">
-                <a href=""><img src="./assets/notebook_hp.jpeg" alt=""></a>
-                <h3>Articulo 3</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-            </div>
-            <div class="card  rotate-hor-center4 fade-in">
-                <a href=""><img src="./assets/monitor.jpeg" alt=""></a>
-                <h3>Articulo 4</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-            </div>
-            <div class="card  rotate-hor-center5 fade-in">
-                <a href=""><img src="./assets/ryzen.jpeg" alt=""></a>
-                <h3>Articulo 5</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
+        <section class="container mt-5 text-center conteiner rotate-hor-center">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg">
+                    <div class="card mb-4 rotate-hor-center1 fade-in">
+                        <a href=""><img src="./assets/impresora.jpeg" class="img-fluid" alt="" ></a>
+                        <h3>Articulo 1</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg">
+                    <div class="card mb-4 rotate-hor-center2 fade-in">
+                        <a href=""><img src="./assets/auricular.jpeg" class="img-fluid" alt=""></a>
+                        <h3>Articulo 2</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg">
+                    <div class="card mb-4 rotate-hor-center3 fade-in">
+                        <a href=""><img src="./assets/notebook_hp.jpeg" class="img-fluid" alt=""></a>
+                        <h3>Articulo 3</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg">
+                    <div class="card mb-4 rotate-hor-center4 fade-in">
+                        <a href=""><img src="./assets/monitor.jpeg" class="img-fluid" alt=""></a>
+                        <h3>Articulo 4</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg">
+                    <div class="card mb-4 rotate-hor-center5 fade-in">
+                        <a href=""><img src="./assets/ryzen.jpeg" class="img-fluid" alt=""></a>
+                        <h3>Articulo 5</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -101,6 +118,6 @@
             <p>Fabian Ponczko &copy; Copyrigth 2022</p>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

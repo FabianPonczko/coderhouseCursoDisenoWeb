@@ -13,7 +13,11 @@ background: -webkit-linear-gradient(to bottom, #004e92, #000428);  /* Chrome 10-
 background: linear-gradient(to bottom, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-nav{
+.navbar{
+  padding: 30px 0px;
+  box-shadow: 0px 0px 10px 10px rgb(150, 150, 150);
+}
+nav-backup{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,20 +26,20 @@ nav{
     background-color:rgba(16, 15, 39, 0.927);
     box-shadow: 0px 0px 10px 10px rgb(150, 150, 150);
 }
-nav ul{
+nav-backup ul{
     display: flex;
     align-items: center;
     justify-content: end;
     list-style: none;
     position: relative;
 }
-nav li a{
+nav-backup li a{
     text-decoration: none;
     color: antiquewhite;
     padding-right: 15px;
     border-left: 1px solid red;
 }
-li a:hover{
+li-backup a:hover{
     color: tomato;
 }
 .logo{
@@ -45,11 +49,11 @@ li a:hover{
     color: antiquewhite;
     padding-left: 10px;
     font-size: 1.5rem;
-}
+  }
 
 /*Contenedor de las cartas con grid*/
 
-.conteiner{
+.conteiner-backup{
     margin-top: 70px;
     display:flex;
     justify-content: center;
@@ -57,6 +61,12 @@ li a:hover{
     gap: 20px;
 }
 .card{
+  box-shadow: 0px 0px 10px 5px rgb(150, 150, 150);
+}
+.card img {
+  height: 150px;
+}
+.card-backup{
    background-color: white;
    display: grid;  
    align-items: center;
@@ -73,17 +83,17 @@ li a:hover{
    margin-bottom: 20px;
 }
 
-.card img{
+.card-backup img{
     width: 150px;
     grid-area: img;
 }
-.card h3{
+.card-backup h3{
     grid-area: titulo;
 }
-.card p{
+.card-backup p{
   grid-area: texto;
 }
-.card:hover{
+.card-backup:hover{
     box-shadow: 3px 3px 20px 5px rgb(150, 150, 150);
  }
 
