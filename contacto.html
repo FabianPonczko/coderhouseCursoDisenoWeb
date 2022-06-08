@@ -1,92 +1,99 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoXx Computación</title>
     <link rel="stylesheet" href="./css/estilos_grid.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <img class="logo" src="./assets/android-chrome-192x192.png" alt="">
-            <div class="titulo">
-                <h1>- FoXx Computación -</h1>
-            </div>
-        
-            <ul class ="navbar">
-                <li class="navbar_menu"><a href="#">Contacto</a></li>
-                    <ul class="menu">
-                        <li><a href="./nosotros.html">Nosotros</a></li>
-                        <li><a href="./consulta.html">Consultas</a></li>
-                        <li><a href="./contacto.html">Contacto</a></li>
-                        <li><a href="./ubicacion.html">Ubicación</a></li>
-                    </ul>
-                <li class="oculta_menu"><a href="./index.html">Home</a></li>
-                <li class="oculta_menu"><a href="./nosotros.html">Nosotros</a></li>
-                <li class="oculta_menu"><a href="./consulta.html">Consultas</a></li>
-                <li class="oculta_menu"><a href="./ubicacion.html">Ubicación</a></li>
-            </ul>
-        </nav>
-            
+
+<body style="background-color: rgba(222, 222, 222, 0.927);">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark"  style="background-color: rgba(16, 15, 39, 0.927);">
+        <div class="col-lg">
+            <img class="logo bounce-in-right" src="./assets/android-chrome-192x192.png" alt="">
         </div>
-        
-    </header>
-    <main>
-        <section class="form">
-            <h2>Formulario de contacto</h2>
+        <div class="container-fluid">
+          <a class="navbar-brand fs-2 me-3 ms-3 slide-bottom" href="#">FoXx Computación</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText" >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-scroll" >
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./consulta.html">Consultas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./ubicacion.html">Ubicación</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+</header>
+      <main>
+        <section class="formulario mt-0">
+          <div class="hero position-relative">
+            <img src="./assets/hero-contacto.jpg" class="d-block w-100" alt="Hero de contactos">  
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Envianos tu comentario</h5>
+              <p>Valoramos todos los feedback de nuestros usuarios.</p>
+            </div>  
+          </div>
+          <fieldset class="container mt-3 p-4">
+          
+            <div class="h4 pb-3 mb-3 text-dark border-bottom border-dark">
+              Formulario de Contacto
             </div>
-            <br>
-            <form action="" method="get" enctype="text/plain" >
-                <fieldset>
-                    <legend>Info Personal</legend>
-                    <br>
-                    <div>
-                        <label for="userName">Nombre:</label>
-                        <input type="text" name="userName" id="userName" placeholder="Coloque su nombre aqui...">
-                    </div>
-                    <br>
-                    <div>
-                        <label for="userApellido">Apellido:</label>
-                        <input type="text" name="userApellido" id="userApellido" placeholder="Coloque su apellido aqui... "">
-                    </div>
-                    <br>
-                    <div>
-                        <label for="userEstado">Estado Civil</label>
-                        <select name="userEstado" id="userEstado">
-                            <option value="Soltero">Soltero</option>
-                            <option value="Casado">Casado</option>
-                        </select>
-                    </div>
-                    <br>
-                    <div>
-                        <label for="userMail">Correo electronico:</label>
-                        <input type="email" name="userMail"  id="userMail" required>
-                    </div>
-                    <br>
-                    <div>
-                        <label for="userCheck">Desea recibir Newsletter</label>
-                        <input type="checkbox" name="userCheck" id="userCheck">
-                    </div>
-                    <br>
-                    <div>
-                        <label for="userComentario"></label>
-                        <textarea name="userComentario" id="UserComentario" cols="30" rows="10" placeholder="Comentario..."></textarea>
-                    </div>
-                    <br>
-                </fieldset>
-                <br>
-                <input type="submit" value="Enviar Formulario">
-                <input type="reset" value="Limpiar Formulario">
-               
-            </form>
-        </section>
-      
-    </main>
 
-
-    <footer>
+            <div class="containers">
+              <div class="row">
+                
+                <div class="col">
+                  
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                  </div>
+                </div>
+                <div class="col">
+                  
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Escribe tu consulta</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+              </div>
+              <div class="col-auto d-flex justify-content-center">
+                <button type="submit" class="btn btn-dark mb-3">Enviar Formulario</button>
+              </div>
+            </div>
+          </fieldset>
+          </section>
+        </main>
+        
+        
+                <footer>
         <div class="footer_div">
             <div class="footer_iconos">
                 <img src="./assets/logo-amd.png" alt="">
@@ -103,6 +110,6 @@
             <p>Fabian Ponczko &copy; Copyrigth 2022</p>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
