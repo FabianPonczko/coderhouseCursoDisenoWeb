@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,26 +10,36 @@
 </head>
 <body>
     <header>
-        <nav>
-            <img class="logo rotate-center" src="./assets/android-chrome-192x192.png" alt="">
-            <div class="titulo">
-                <h1 class="slide-bottom">- FoXx Computación -</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark"  style="background-color: rgba(16, 15, 39, 0.927);">
+            <div class="col-lg">
+                <img class="logo bounce-in-right" src="./assets/android-chrome-192x192.png" alt="">
             </div>
-        
-            <ul class ="navbar">
-                <li class="navbar_menu"><a href="#">Consultas</a></li>
-                    <ul class="menu">
-                        <li><a href="./nosotros.html">Nosotros</a></li>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./contacto.html">Contacto</a></li>
-                        <li><a href="./ubicacion.html">Ubicación</a></li>
-                    </ul>
-                <li class="oculta_menu"><a href="./nosotros.html">Nosotros</a></li>
-                <li class="oculta_menu"><a href="./index.html">Home</a></li>
-                <li class="oculta_menu"><a href="./contacto.html">Contacto</a></li>
-                <li class="oculta_menu"><a href="./ubicacion.html">Ubicación</a></li>
-            </ul>
-        </nav>
+            <div class="container-fluid">
+              <a class="navbar-brand fs-2 me-3 ms-3" href="#">FoXx Computación</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText" >
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-scroll" >
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./nosotros.html">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./consulta.html">Consultas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./contacto.html">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./ubicacion.html">Ubicación</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
             
         </div>
         
@@ -62,6 +73,6 @@
             <p>Fabian Ponczko &copy; Copyrigth 2022</p>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
