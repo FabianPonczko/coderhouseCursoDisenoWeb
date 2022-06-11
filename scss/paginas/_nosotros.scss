@@ -1,0 +1,39 @@
+/* gradiante solo para pagina nosotros*/
+.gradiant{
+    background: linear-gradient(to bottom, #324250, #080834); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*pestaña nosotros*/
+
+.main_section{
+    margin: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    .main_div{
+        padding: 5rem;;
+        width:50rem;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        
+        & h1{
+            margin:25px 0;
+            box-shadow: 0px 0px 10px 5px #969696;
+            width:fit-content;
+        }
+        & p{
+            padding: 30px;
+            box-shadow: 0px 0px 10px 5px rgb(150, 150, 150);
+            background-color: rgba(68, 115, 28, 0.058);
+        }
+    }
+}
+.logo_grande{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px 5px #969696;
+}

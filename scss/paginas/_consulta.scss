@@ -1,0 +1,10 @@
+/*pestaña consultas*/
+.consulta{
+    margin: 50px 150px;
+    text-align: center;
+    & p{
+        margin-top: 50px;
+        border-top: 1px solid rgba(130, 134, 165, 0.47);
+        border-bottom: 1px solid rgba(130, 134, 165, 0.47);
+    }
+}

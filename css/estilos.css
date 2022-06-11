@@ -1,26 +1,38 @@
 @charset "UTF-8";
-/*reset*/
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box; }
-
+/* fondo de las paginas */
 body {
   background-color: #dedede; }
-
-.gradiant {
-  background: linear-gradient(to bottom, #324250, #080834);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
-
-/* hero solo en contacto por ahora*/
-.hero {
-  width: 100vw; }
-  .hero .hero img {
-    width: inherit; }
 
 /* modificando logo puedo cambiar el alto del navbar*/
 .logo {
   width: 80px; }
+
+/*footer de todas las paginas*/
+.footer_div {
+  margin-top: 30px;
+  display: flex;
+  background-color: rgba(100, 113, 120, 0.11);
+  padding: 15px;
+  justify-content: space-around; }
+  .footer_div ul {
+    margin-left: 10px;
+    width: 200px; }
+  .footer_div p {
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin: 2px 10px;
+    color: #808080; }
+  .footer_div .footer_iconos {
+    width: 300px;
+    display: flex;
+    justify-content: space-between; }
+    .footer_div .footer_iconos img {
+      width: 60px;
+      height: 50px;
+      margin: 10px;
+      border-radius: 15px; }
 
 /*Contenedor de las cartas con grid*/
 .card {
@@ -33,32 +45,10 @@ body {
   width: -webkit-fill-available;
   border-radius: 25px; }
 
-/*footer de todas las paginas*/
-.footer_div {
-  margin-top: 30px;
-  display: flex;
-  background-color: rgba(100, 113, 119, 0.111);
-  padding: 15px;
-  justify-content: space-around; }
-  .footer_div ul {
-    margin-left: 10px;
-    width: 200px; }
-  .footer_div p {
-    width: 50%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin: 2px 10px;
-    color: gray; }
-  .footer_div .footer_iconos {
-    width: 300px;
-    display: flex;
-    justify-content: space-between; }
-    .footer_div .footer_iconos img {
-      width: 60px;
-      height: 50px;
-      margin: 10px;
-      border-radius: 15px; }
+/* gradiante solo para pagina nosotros*/
+.gradiant {
+  background: linear-gradient(to bottom, #324250, #080834);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
 
 /*pestaña nosotros*/
 .main_section {
@@ -66,6 +56,20 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center; }
+  .main_section .main_div {
+    padding: 5rem;
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+    .main_section .main_div h1 {
+      margin: 25px 0;
+      box-shadow: 0px 0px 10px 5px #969696;
+      width: fit-content; }
+    .main_section .main_div p {
+      padding: 30px;
+      box-shadow: 0px 0px 10px 5px #969696;
+      background-color: rgba(68, 115, 28, 0.058); }
 
 .logo_grande {
   padding: 15px;
@@ -73,21 +77,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0px 0px 10px 5px #969696; }
-
-.main_div {
-  padding: 5rem;
-  width: 50rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly; }
-  .main_div h1 {
-    margin: 25px 0;
-    box-shadow: 0px 0px 10px 5px #969696;
-    width: fit-content; }
-  .main_div p {
-    padding: 30px;
-    box-shadow: 0px 0px 10px 5px #969696;
-    background-color: rgba(68, 115, 28, 0.058); }
 
 /*pestaña consultas*/
 .consulta {
@@ -98,8 +87,11 @@ body {
     border-top: 1px solid rgba(130, 134, 165, 0.47);
     border-bottom: 1px solid rgba(130, 134, 165, 0.47); }
 
-.menu {
-  display: none; }
+/* hero solo en contacto por ahora*/
+.hero {
+  width: 100vw; }
+  .hero img {
+    width: inherit; }
 
 /* pestaña ubicación*/
 .ubicacion {
@@ -111,7 +103,7 @@ body {
 
 .mapa {
   padding: 5px;
-  border: #100f00 solid 1px; }
+  border: #100f27ed solid 1px; }
 
 @media screen and (max-width: 426px) {
   .oculta_menu {
@@ -130,35 +122,7 @@ body {
   /* paguina de nosotros */
   .logo_grande {
     display: none; }
-  .main_div {
-    font-size: 1rem;
-    padding: 1rem; }
-  /* consulta */
-  .consulta {
-    margin: 80px 30px; }
-  /* mapa */
-  .mapa iframe {
-    max-width: 90vw; } }
-
-@media screen and (max-width: 426px) {
-  .oculta_menu {
-    display: none; }
-  .navbar {
-    border-bottom: 1px double #3e4240; }
-  nav li a {
-    padding-right: 0;
-    border: none; }
-  .texto_450 {
-    margin-left: 0px; }
-  .footer_div {
-    display: block; }
-  .footer_div p {
-    width: 100%; }
-  /* paguina de nosotros */
-  .logo_grande {
-    display: none; }
-  .main_div {
-    font-size: 1rem;
+  .main_section .main_div {
     padding: 1rem; }
   /* consulta */
   .consulta {

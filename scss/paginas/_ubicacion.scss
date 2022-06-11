@@ -1,0 +1,13 @@
+/* pestaña ubicación*/
+.ubicacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & h3{
+        margin: 35px 0px;
+    }
+}
+.mapa {
+    padding: 5px;
+    border: #100f27ed solid 1px;
+}
