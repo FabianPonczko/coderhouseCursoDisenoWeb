@@ -1,18 +1,18 @@
 /* gradiante solo para pagina nosotros*/
-.gradiant{
-    background: linear-gradient(to bottom, #324250, #080834); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+/*.gradiant{
+/*    background: linear-gradient(to bottom, #324250, #080834); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+}*/
 
 /*pestaña nosotros*/
 
 .main_section{
-    margin: 1rem;
+    margin: 0rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
     
     .main_div{
-        padding: 5rem;;
+        padding: 3rem;;
         width:50rem;
         display:flex;
         flex-direction: column;

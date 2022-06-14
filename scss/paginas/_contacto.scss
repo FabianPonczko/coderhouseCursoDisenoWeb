@@ -1,8 +1,15 @@
 /* hero solo en contacto por ahora*/
-.hero{
-    width: 100vw;
-    & img{
+.hero img{
       width:inherit;
     }
+
+.hero-image {
+  background-image: url("../assets/img/fondo-computadores.jpg");
+  /*background-color: #cccccc;*/
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
   

@@ -473,3 +473,78 @@
             transform: rotate(2deg);
   }
 }
+
+/*Animacion contorno neon en foXx Computacion*/
+#span1{
+  animation: span1 0.3s ease-in-out 2.5s both;
+}
+
+@keyframes span1{
+  0%{
+    top:0px;
+    left:-400px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent,#a945c7);
+  }
+  100%{
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent,#a945c7);
+  }
+}
+#span2{
+  animation: span2 0.3s ease-in-out 2.5s both;
+}
+
+@keyframes span2{
+  0%{
+    top: -200%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#a945c7);
+  }
+  100%{
+    top: 0%;
+    
+  }
+}
+#span3{
+  animation: span3 0.3s ease-in-out 2.5s both;
+}
+
+@keyframes span3{
+  0%{
+    right: -600%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent,#a945c7);
+  }
+  100%{
+    bottom: 0;
+    right: 0%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent,#a945c7);
+  }
+}
+
+#span4{
+  animation: span4 0.3s ease-in-out 2.5s both;
+}
+
+@keyframes span4{
+  0%{
+    bottom: -600%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#a945c7);
+    
+  }
+  100%{
+    bottom: 0%;
+    }    
+  }

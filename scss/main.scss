@@ -15,10 +15,10 @@ body{
 
 /*footer de todas las paginas*/
 .footer_div{
-  margin-top: 30px;
+  margin-top: 0px;
   display: flex;
-  background-color:$color-footer;
-  padding: 15px;
+  /*background-color:$color-footer;*/
+  padding: 1px;
   justify-content: space-around;
   & ul{
     margin-left: 10px;
@@ -29,7 +29,7 @@ body{
     display :flex;
     align-items: flex-end;
     justify-content: flex-end;
-    margin: 2px 10px;
+    margin: 1px 0px;
     color:#808080;
   }
   .footer_iconos{
@@ -44,6 +44,18 @@ body{
     }
   }
 }
+
+/* effecto en titulo FoXx Computacion */
+.btn-neon:hover{
+  background: #a945c7;
+  box-shadow: 0 0 10px #a945c7, 0 0 40px #a945c7, 0 0 80px #a945c7;
+  transition-delay: 0.1s;
+}
+.btn-neon span{
+  position: absolute;
+  display:block;
+}
+
 
 @import "./paginas/inicio";
 @import "./paginas/nosotros";
