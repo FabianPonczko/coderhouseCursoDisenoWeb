@@ -87,6 +87,14 @@ body {
   justify-content: space-between;
   box-shadow: 0px 0px 10px 5px #969696; }
 
+.hero-image {
+  background-image: url("../assets/img/fondo-computadores.jpg");
+  /*background-color: #cccccc;*/
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 /*pestaña consultas*/
 .consulta {
   margin: 40px 150px;
@@ -109,14 +117,6 @@ body {
 /* hero solo en contacto por ahora*/
 .hero img {
   width: inherit; }
-
-.hero-image {
-  background-image: url("../assets/img/fondo-computadores.jpg");
-  /*background-color: #cccccc;*/
-  height: 600px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain; }
 
 /* pestaña ubicación*/
 .ubicacion {
