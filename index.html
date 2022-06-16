@@ -144,7 +144,8 @@
             </button>
           </div>
         </section>       
-          
+        
+      
         <div class="mt-0 p-1 bg-dark text-white d-none d-lg-block" style="align-items: center;">
           <div class="d-flex" style="justify-content: space-around;align-items: baseline;">
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vitae molestiae ab!</p>
@@ -158,74 +159,193 @@
   
             </div>
         </div>
-        
-          <section class="container mt-5 mb-4 text-center rotate-hor-center">
+        <!-- Contenedor de cartas con hover -->
+          <section class="container mt-5 mb-4 text-center ">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 rotate-hor-center1 fade-in">
-                        <a href=""><img src="./assets/impresora.jpeg" class="img-fluid" alt="" ></a>
+              <div class="col-12 col-md-6 col-lg">
+                <div class="card mb-4 rounded-2 fade-in">
+                      <button type="button" class="btn" data-bs-toggle="modal"      data-bs-target="#exampleModal1">
+                        <img src="./assets/impresora.jpeg" class="img-fluid" alt="" >
                         <h3>Articulo 1</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-                    </div>
+                      </button>  
+                  </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 rotate-hor-center2 fade-in">
-                        <a href=""><img src="./assets/auricular.jpeg" class="img-fluid" alt=""></a>
-                        <h3>Articulo 2</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 rotate-hor-center3 fade-in">
-                        <a href=""><img src="./assets/notebook_hp.jpeg" class="img-fluid" alt=""></a>
-                        <h3>Articulo 3</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 rotate-hor-center4 fade-in">
-                        <a href=""><img src="./assets/monitor.jpeg" class="img-fluid" alt=""></a>
+              <div class="col-12 col-md-6 col-lg">
+                  <div class="card mb-4 rounded-2 fade-in">
+                    <button type="button" class="btn" data-bs-toggle="modal"      data-bs-target="#exampleModal2">
+                      <img src="./assets/auricular.jpeg" class="img-fluid" alt="">
+                      <h3>Articulo 2</h3>
+                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
+                    </button>
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg">
+                  <div class="card mb-4 rounded-2 fade-in">
+                    <button type="button" class="btn" data-bs-toggle="modal"      data-bs-target="#exampleModal3">
+                      <img src="./assets/notebook_hp.jpeg" class="img-fluid" alt="">
+                      <h3>Articulo 3</h3>
+                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
+                    </button>
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg">
+                  <div class="card mb-4 rounded-2 fade-in">
+                      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                        <img src="./assets/monitor.jpeg" class="img-fluid" alt="">
                         <h3>Articulo 4</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 rotate-hor-center5 fade-in">
-                        <a href=""><img src="./assets/ryzen.jpeg" class="img-fluid" alt=""></a>
+                      </button>  
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg">
+                  <div class="card mb-4 rounded-2 fade-in">
+                      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                        <img src="./assets/ryzen.jpeg" class="img-fluid" alt="" >
                         <h3>Articulo 5</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
+                      </button>  
+                  </div>
+              </div>
+            </div>
+        </section>
+
+        <section>
+
+          <!-- Modal 5-->
+            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel5">Articulo 5</h5>
+                    <img src="./assets/ryzen.jpeg" class="img-fluid" alt="imagen de micro ryzen" >
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione qui vel quia?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis ad porro officiis qui libero!</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal 4-->
+            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel4">Articulo 4</h5>
+                    <img src="./assets/monitor.jpeg" class="img-fluid" alt="imagen de micro ryzen" >
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione qui vel quia?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis ad porro officiis qui libero!</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <!-- Modal 3-->
+             <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel3">Articulo 3</h5>
+                    <img src="./assets/notebook_hp.jpeg" class="img-fluid" alt="imagen de micro ryzen" >
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione qui vel quia?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis ad porro officiis qui libero!</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <!-- Modal 2-->
+             <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Articulo 2</h5>
+                    <img src="./assets/auricular.jpeg" class="img-fluid" alt="imagen de micro ryzen" >
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione qui vel quia?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis ad porro officiis qui libero!</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <!-- Modal 1-->
+             <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Articulo 1</h5>
+                    <img src="./assets/impresora.jpeg" class="img-fluid" alt="imagen de micro ryzen" >
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae cumque quidem corrupti error explicabo praesentium placeat maiores ullam molestiae magni aliquid, quisquam quos neque aut dignissimos omnis nihil tempora doloremque!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <hr class="text-black-50">
+        <!-- Destacados de la semana -->
+        <section>
+            <div class="container justify-content-center mt-5 mb-5">
+                <div class="row align-items-center mt-4">
+                    <div class="col-md-6 col-12">
+                        <img src="./assets/asus.jpeg" alt="" class="img_450 shadow">
+                    </div>
+                    <div class="col-md-6 col-12 p-3 shadow rounded">
+                        <h1>Destacado de la semana</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reiciendis quasi blanditiis excepturi ipsam itaque molestias voluptates iure! Ad molestiae recusandae tenetur? Illum delectus inventore obcaecati excepturi porro eveniet debitis aut quia libero distinctio laboriosam quae tempore dignissimos rem quam neque, quas vel fuga praesentium optio exercitationem deleniti qui consectetur.</p>
+                    </div>
                     </div>
                 </div>
             </div>
         </section>
-        <hr class="text-black-50">
-                <section>
-                    <div class="container justify-content-center mt-5">
-                        <div class="row align-items-center mt-4">
-                            <div class="col-md-6 col-12">
-                                <img src="./assets/asus.jpeg" alt="" class="img_450 shadow">
-                            </div>
-                            <div class="col-md-6 col-12 p-3 shadow rounded">
-                                <h1>Destacado de la semana</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reiciendis quasi blanditiis excepturi ipsam itaque molestias voluptates iure! Ad molestiae recusandae tenetur? Illum delectus inventore obcaecati excepturi porro eveniet debitis aut quia libero distinctio laboriosam quae tempore dignissimos rem quam neque, quas vel fuga praesentium optio exercitationem deleniti qui consectetur.</p>
-                            </div>
-                            </div>
-                        </div>
+        <section>
+            <div class="container">
+                <div class="row align-items-center mt-4 mb-5">
+                    <div class="col-md-6 col-12">
+                        <img src="./assets/pc.jpeg" alt="" class="img_450 shadow">
                     </div>
-                </section>
-                <section>
-                    <div class="container">
-                        <div class="row align-items-center mt-4">
-                            <div class="col-md-6 col-12">
-                                <img src="./assets/pc.jpeg" alt="" class="img_450 shadow">
-                            </div>
-                            <div class="col-md-6 col-12 p-3 shadow rounded">
-                                <h1>Pc de escritorio</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolores dolorum, magni similique commodi in aliquam nemo placeat in earum molestiae eos, sequi, harum aliquid corrupti tenetur nam voluptatem culpa recusandae numquam? Impedit nisi temporibus aliquid ducimus eos praesentium laboriosam. Quos odio dignissimos dolorem et mollitia officia, beatae cum labore dicta, voluptatibus, ex sint natus optio! Veritatis vitae doloribus magnam temporibus sed quam, harum atque ad. Magni quo adipisci ipsum doloribus?</p>
-                            </div>
-                        </div>
+                    <div class="col-md-6 col-12 p-3 shadow rounded">
+                        <h1>Pc de escritorio</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolores dolorum, magni similique commodi in aliquam nemo placeat in earum molestiae eos, sequi, harum aliquid corrupti tenetur nam voluptatem culpa recusandae numquam? Impedit nisi temporibus aliquid ducimus eos praesentium laboriosam. Quos odio dignissimos dolorem et mollitia officia, beatae cum labore dicta, voluptatibus, ex sint natus optio! Veritatis vitae doloribus magnam temporibus sed quam, harum atque ad. Magni quo adipisci ipsum doloribus?</p>
                     </div>
-                </section>
+                </div>
+            </div>
+        </section>
             
     </main>
     <footer>
