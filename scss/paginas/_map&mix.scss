@@ -1,0 +1,12 @@
+$alineado:(
+    around: space-around,
+    evenly:space-evenly,
+    between:space-between,
+
+);
+
+@mixin bg-image-hero{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+};

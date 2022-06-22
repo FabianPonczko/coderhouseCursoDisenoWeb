@@ -1,14 +1,9 @@
-/* gradiante solo para pagina nosotros*/
-/*.gradiant{
-/*    background: linear-gradient(to bottom, #324250, #080834); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
-}*/
-
 /*pestaña nosotros*/
 
 .main_section{
     margin: 0rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: map-get($alineado,around);
     align-items: center;
     
     .main_div{
@@ -16,7 +11,7 @@
         width:50rem;
         display:flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: map-get($alineado,evenly);
         
         & h1{
             margin:25px 0;
@@ -34,15 +29,12 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content:  map-get($alineado,between);
     box-shadow: 0px 0px 10px 5px #969696;
 }
+
 .hero-image {
     background-image: url("../assets/img/fondo-computadores.jpg");
-    /*background-color: #cccccc;*/
     height: 600px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  
+    @include bg-image-hero;
   }
