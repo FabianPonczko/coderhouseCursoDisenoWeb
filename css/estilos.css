@@ -109,7 +109,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover; }
 
-/* hero solo en contacto por ahora*/
+/* hero en contacto*/
 .hero img {
   width: inherit; }
 
@@ -130,7 +130,8 @@ body {
   padding: 5px;
   border: #100f27ed solid 1px; }
 
-@media screen and (max-width: 426px) {
+/* responsiv tablet */
+@media screen and (max-width: 768px) {
   .oculta_menu {
     display: none; }
   .navbar {
@@ -156,13 +157,21 @@ body {
   .mapa iframe {
     max-width: 90vw; } }
 
+/* responsiv mobile */
 @media screen and (min-width: 426px) {
   .fade-out {
     display: none; } }
 
-@media screen and (max-width: 1023px) {
+/* responsiv desktop */
+@media screen and (max-width: 1024px) {
   .logo {
-    display: none; } }
+    display: none; }
+  .card button p {
+    font-size: small; }
+  .rounded h1 {
+    font-size: x-large; }
+  .rounded p {
+    font-size: small; } }
 
 /*ANIMACIONES*/
 .rotate-hor-center1:hover {
