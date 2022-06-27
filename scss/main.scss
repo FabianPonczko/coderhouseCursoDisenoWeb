@@ -1,0 +1,67 @@
+
+//Variables
+$color-body:rgb(222, 222, 222);
+$color-footer:rgba(100, 113, 120, 0.11);
+
+/* fondo de las paginas */
+body{
+  background-color: $color-body;
+}
+
+/* logo del navbar*/
+.logo{
+  width: 80px;
+}
+
+/*footer de todas las paginas*/
+.footer_div{
+  margin-top: 0px;
+  display: flex;
+  padding: 1px;
+  justify-content: space-around;
+  & ul{
+    margin-left: 10px;
+    width: 200px;
+  }
+  & p{
+    width:50%;
+    display :flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin: 1px 0px;
+    color:#808080;
+  }
+  .footer_iconos{
+    width:300px;
+    display:flex;
+    justify-content: space-between;
+    & img{
+      width: 60px;    
+      height: 50px;
+      margin: 10px;
+      border-radius: 15px;
+    }
+  }
+}
+
+/* efecto en titulo FoXx Computacion */
+.btn-neon:hover{
+  background: #a945c7;
+  box-shadow: 0 0 10px #a945c7, 0 0 40px #a945c7, 0 0 80px #a945c7;
+  transition-delay: 0.1s;
+}
+.btn-neon span{
+  position: absolute;
+  display:block;
+}
+
+@import "./paginas/map&mix";
+@import "./paginas/inicio";
+@import "./paginas/nosotros";
+@import "./paginas/consulta";
+@import "./paginas/contacto";
+@import "./paginas/ubicacion";
+@import "./paginas/mediasQuery";
+@import "./paginas/animaciones";
+
+

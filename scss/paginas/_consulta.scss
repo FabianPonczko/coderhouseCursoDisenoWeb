@@ -1,0 +1,17 @@
+/*pestaña consultas*/
+.consulta{
+    margin: 40px 150px;
+    text-align: center;
+    & h2{
+        margin-top: 35px;
+    }
+    & p{
+        @extend h2;
+        border-top: 1px solid rgba(130, 134, 165, 0.47);
+        border-bottom: 1px solid rgba(130, 134, 165, 0.47);
+    }
+}
+.hero-consulta{
+    background-image: url("../assets/img/redes-sociales.jpg");
+    @include bg-image-hero;    
+  }

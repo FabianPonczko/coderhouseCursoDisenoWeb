@@ -1,126 +1,376 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="./cssb/bootstrap.min.css" rel="stylesheet" >
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoXx Computación</title>
-    <link rel="stylesheet" href="./css/estilos_grid.css">
+    <meta name="description" content="Venta de computadoras, notebook, impresoras y accesorios gamer.">
+    <meta name="keywords" content="Computación, pc, notebook, accesorios, impresora, monitores">
+    <title>FoXx Computación - Venta de computadoras e insumos</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    
 </head>
 <body>
+    
+  <!--Navbar principal-->
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark"  style="background-color: rgba(16, 15, 39, 0.927);">
-            <div class="col-lg">
-                <img class="logo bounce-in-right" src="./assets/android-chrome-192x192.png" alt="">
-            </div>
-            <div class="container-fluid">
-              <a class="navbar-brand fs-2 me-3 ms-3 slide-bottom" href="#">FoXx Computación</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarText" >
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-scroll" >
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./nosotros.html">Nosotros</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./consulta.html">Consultas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./contacto.html">Contacto</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./ubicacion.html">Ubicación</a>
-                  </li>
-                </ul>
+          <nav class="navbar navbar-expand-lg navbar-dark shadow"  style="background-color: #100f27;">
+          <div class="col-lg">
+                  <img class="logo bounce-in-right" src="./assets/android-chrome-192x192.png" alt="Logo FoXx del menu">
               </div>
-            </div>
+              <div class="container-fluid">
+                <a class="btn-neon navbar-brand fs-2 me-3 ms-3 slide-bottom" href="#"> FoXx Computación  
+                    <span id="span1"></span>
+                    <span id="span3"></span>
+                </a>
+                              
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText" style="justify-content: flex-end;">               
+                  <div>
+                    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-scroll" >
+                      <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success me-2" type="submit">Search</button>
+                      </form>  
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./nosotros.html">Nosotros</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./consulta.html">Consultas</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./ubicacion.html">Ubicación</a>
+                      </li>
+                      
+                    </ul>
+                    
+                  </div>
+                  </div>
+                </div>
           </nav>
-        
     </header>
+    
     <main>
         
+      <!-- Carrusel -->
+
+        <section>
+
+          <div id="carouselExampleCaptions" class="d-none d-lg-block m-0 carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+            
+            <div class="carousel-inner mt-0" style="background: linear-gradient(120deg, rgba(26,18,65,1) 0%, rgba(103,241,167,1) 100%);">
+              
+              <div class="carousel-item active">
+                <img src="./assets/impresora.jpeg" class="d-block" alt="Imagen de impresora" style="height:300px;border: 1px solid black;">
+                <div class="carousel-caption  d-md-block text-black text-opacity-75">
+                  <h1>Impresoras</h1>
+                  <br>
+                  <h5>FoXx Computacion</h5>
+                  <p>Tenemos todos los modelos de impresoras-</p>
+                </div>
+              </div>    
+              
+              <div class="carousel-item">
+                <img src="./assets/img/acc.jpg" class="d-block" alt="Imagen de auriculares" style="height:300px;border: 1px solid black;">
+                <div class="carousel-caption  d-md-block text-black text-opacity-75">
+                  <h1>Accesorios</h1>
+                  <br>
+                  <h5>FoXx Computacion</h5>
+                  <p>Amplia gama de accesorios- </p>
+                </div>
+              </div>    
+              
+              <div class="carousel-item">
+                <img src="./assets/monitor.jpeg" class="d-block" alt="Monitores" style="height:300px;border: 1px solid black;">
+                <div class="carousel-caption  d-md-block text-black text-opacity-75">
+                  <h1>Monitores</h1>
+                  <br>
+                  <h5>FoXx Computacion</h5>
+                  <p>Monitores Gamer y de alta definición para diseño gráfico.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/notebook_hp.jpeg" class="d-block" alt="Img Notebook" style="height:300px;border: 1px solid black;">
+                <div class="carousel-caption  d-md-block text-black text-opacity-75">
+                  <h1>Notebook´s</h1>
+                  <br>
+                  <h5>FoXx Computacion</h5>
+                  <p>Laptop con aceleradoras dedicadas y laptops para oficina.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/pc.jpeg" class="d-block" alt="Img Pc" style="height:300px;border: 1px solid black;">
+                <div class="carousel-caption  d-md-block ">
+                  <h1>Pc´s Escritorio</h1>
+                  <br>
+                  <h5>FoXx Computacion</h5>
+                  <p>Arma tu PC favorita con los mejores accesorios.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/ryzen.jpeg" class="d-block" alt="Img de micro" style="height:300px;border: 1px solid black;">
+                <div class="carousel-caption  d-md-block text-black text-opacity-75">
+                  <h1>Microprocesadores</h1>
+                  <br>
+                  <h5>FoXx Computacion</h5>
+                  <p>Micros Amd - Pentium - Celeron.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </section>       
         
-        <section class="container mt-5 mb-4 text-center rotate-hor-center">
+      
+        <div class="mt-0 p-1 bg-dark text-white d-none d-lg-block" style="align-items: center;">
+          <div class="d-flex" style="justify-content: space-around;align-items: baseline;">
+              <p>Comunicate con nosotros, usa tu red social preferida, te estamos esperando!!!</p>
+              <div>
+                <img src="./assets/iconos/icons8-facebook-48.png" alt="logo facebook" >
+                <img src="./assets/iconos/icons8-instagram-48.png" alt="logo instagram">
+                <img src="./assets/iconos/icons8-twitter-48.png" alt="logo twitter">
+                <img src="./assets/iconos/icons8-whatsapp-48.png" alt="logo whatapp">
+              </div>  
+            </div>
+        </div>
+       
+        
+
+        <!-- Contenedor de cartas con hover -->
+          <section class="container mt-5 mb-4 text-center ">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 rotate-hor-center1 fade-in">
-                        <a href=""><img src="./assets/impresora.jpeg" class="img-fluid" alt="" ></a>
-                        <h3>Articulo 1</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-                    </div>
+              <div class="col-12 col-md-6 col-lg">
+                <div class="card mb-4 rounded-2 fade-in">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="height:20rem;">
+                        <img src="./assets/impresora.jpeg" class="img-fluid" alt="imagen impresora" >
+                        <h5>EPSON SP 450x</h5>
+                        <p>Impresora epson sistema chorro de tinta sistema continuo 1200dpi  garantia 12 meses .</p>
+                    </button>  
                 </div>
-                <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 rotate-hor-center2 fade-in">
-                        <a href=""><img src="./assets/auricular.jpeg" class="img-fluid" alt=""></a>
-                        <h3>Articulo 2</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-                    </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg">
+                  <div class="card mb-4 rounded-2 fade-in">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2"  style="height:20rem;">
+                      <img src="./assets/auricular.jpeg" class="img-fluid" alt="imgagen auriculares">
+                      <h5>Auriculares H-200</h5>
+                      <p>Auriculares philips sonido 5.1 conección  plug 3.5mm color negro</p>
+                    </button>
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg">
+                  <div class="card mb-4 rounded-2 fade-in">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal3"  style="height:20rem;">
+                      <img src="./assets/notebook_hp.jpeg" class="img-fluid" alt="imagen notebook">
+                      <h5>Notebook HP</h5>
+                      <p>HP 6000 us intel core i7 disco 240gb memoria 8gb aceleradora dedicada</p>
+                    </button>
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg">
+                  <div class="card mb-4 rounded-2 fade-in">
+                      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal4"  style="height:20rem;">
+                        <img src="./assets/monitor.jpeg" class="img-fluid" alt="imagen monitor">
+                        <h5>Monitor Gigabyte</h5>
+                        <p>Monitor gamer con tasa de refresco de 144 mhz soporte lateral y inclinacion de 8 grados refgulable</p>
+                      </button>  
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg">
+                  <div class="card mb-4 rounded-2 fade-in">
+                      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal5"  style="height:20rem;">
+                        <img src="./assets/ryzen.jpeg" class="img-fluid" alt="imagen micro" >
+                        <h5>Micro Ryzen 9</h5>
+                        <p>AMD Ryzen 9 clase D velocidad maxima 32000 ciclos por segundo</p>
+                      </button>  
+                  </div>
+              </div>
+            </div>
+        </section>
+
+        
+        <section>
+
+          <!-- Modal 5  Articulo 5 de los card -->
+            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel5">Micro Ryzen</h5>
+                    <img src="./assets/ryzen.jpeg" class="img-fluid" alt="imagen de micro ryzen" >
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>AMD ryzen clase d con velocidades maxismas de 32000 ciclos por segundo</p>
+                    <p>Llevalo por $45000  -  contado</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                  </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 rotate-hor-center3 fade-in">
-                        <a href=""><img src="./assets/notebook_hp.jpeg" class="img-fluid" alt=""></a>
-                        <h3>Articulo 3</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-                    </div>
+              </div>
+            </div>
+
+            <!-- Modal 4  Articulo 4 de los card -->
+            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel4">Monitor Gigabyte</h5>
+                    <img src="./assets/monitor.jpeg" class="img-fluid" alt="imagen de monitor" >
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Monitor gamer con tasa de refresco de 144 mhz soporte lateral y inclinacion de 8 grados refgulable</p>
+                    <p>Llevalo por $52000 - solo contado</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                  </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 rotate-hor-center4 fade-in">
-                        <a href=""><img src="./assets/monitor.jpeg" class="img-fluid" alt=""></a>
-                        <h3>Articulo 4</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
-                    </div>
+              </div>
+            </div>
+
+             <!-- Modal 3  Articulo 3 de los card -->
+             <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel3">Notebook HP</h5>
+                    <img src="./assets/notebook_hp.jpeg" class="img-fluid" alt="imagen de notebook" >
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>HP 6000us intel core i7 disco 240gb memoria 8gb aceleradora dedicada</p>
+                    <p>Llevalo por $145000 - solo contado</p>  
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                  </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 rotate-hor-center5 fade-in">
-                        <a href=""><img src="./assets/ryzen.jpeg" class="img-fluid" alt=""></a>
-                        <h3>Articulo 5</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae commodi repellat.</p>
+              </div>
+            </div>
+
+             <!-- Modal 2  Articulo 2 de los card -->
+             <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Auriculares H-200</h5>
+                    <img src="./assets/auricular.jpeg" class="img-fluid" alt="imagen de auricular" >
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Auricular con micrófono y auriculares de alta calidad</p>
+                    <p>Llevalo por $12000 - solo contado</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             <!-- Modal 1  Articulo 1 de los card -->
+             <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Epson Sp 450x</h5>
+                    <img src="./assets/impresora.jpeg" class="img-fluid" alt="imagen de impresora" >
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Impresora epson sistema chorro de tinta sistema continuo 1200dpi  garantia 12 meses .</p>
+                    <p>LLevalo por $25000 - solo contado</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <!--Productos destacado de la semana-->
+        <section>
+
+            <div class="mt-0 p-2 text-white d-none d-lg-block sticky-top bg-dark bg-gradient" >
+              <div class="d-flex" style="justify-content: space-around;align-items: baseline;">
+                  <h3>Destacados de la semana !</h3>
+              </div>
+            </div>
+        
+            <div class="container justify-content-center mt-5 mb-5">
+                <div class="row align-items-center mt-4">
+                    <div class="col-md-5 col-12">
+                        <img src="./assets/asus.jpeg" alt="img notebook asus" class="img_450 shadow">
+                    </div>
+                    <div class="col-md-6 col-12 p-3 shadow rounded">
+                        <h1>Notebook asus X515 </h1>
+                        <p>La Asus Laptop X515 implementa Las ultimas tecnologias, para que disfrutes de una experiencia de usuario espectacular.</p>
+                        <p>La pantalla NanoEdge ofrece una experiencia visual inmersiva para trabajar y jugar. Su panel HD ofrece ángulos de visión amplios y tiene un revestimiento antirreflejos que reduce distracciones y reflejos para que puedas concentrarte en lo que tienes delante</p>
+                    </div>
                     </div>
                 </div>
             </div>
         </section>
-        <hr class="text-black-50">
-                <section class="section_destacado1">
-                    <div class="container justify-content-center mt-5">
-                        <div class="row align-items-center mt-4">
-                            <div class="col-md-6 col-12">
-                                <img src="./assets/asus.jpeg" alt="" class="img_450 shadow">
-                            </div>
-                            <div class="col-md-6 col-12 p-3 shadow rounded">
-                                <h1>Destacado de la semana</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reiciendis quasi blanditiis excepturi ipsam itaque molestias voluptates iure! Ad molestiae recusandae tenetur? Illum delectus inventore obcaecati excepturi porro eveniet debitis aut quia libero distinctio laboriosam quae tempore dignissimos rem quam neque, quas vel fuga praesentium optio exercitationem deleniti qui consectetur.</p>
-                            </div>
-                            </div>
-                        </div>
+        <section>
+            <div class="container">
+                <div class="row align-items-center mt-4 mb-5">
+                    <div class="col-md-5 col-12">
+                        <img src="./assets/pc.jpeg" alt="img cpu" class="img_450 shadow">
                     </div>
-                </section>
-                <section class="section_destacado2">
-                    <div class="container">
-                        <div class="row align-items-center mt-4">
-                            <div class="col-md-6 col-12">
-                                <img src="./assets/pc.jpeg" alt="" class="img_450 shadow">
-                            </div>
-                            <div class="col-md-6 col-12 p-3 shadow rounded">
-                                <h1>Pc de escritorio</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolores dolorum, magni similique commodi in aliquam nemo placeat in earum molestiae eos, sequi, harum aliquid corrupti tenetur nam voluptatem culpa recusandae numquam? Impedit nisi temporibus aliquid ducimus eos praesentium laboriosam. Quos odio dignissimos dolorem et mollitia officia, beatae cum labore dicta, voluptatibus, ex sint natus optio! Veritatis vitae doloribus magnam temporibus sed quam, harum atque ad. Magni quo adipisci ipsum doloribus?</p>
-                            </div>
-                        </div>
+                    <div class="col-md-6 col-12 p-3 shadow rounded">
+                        <h1>Pc de escritorio</h1>
+                        <p>Si necesitás trabajar con programas exigentes a nivel cómputo para la facu, esta PC puede ofrecerte rapidez, eficacia y poco consumo energético en el mismo producto.</p>
+                        <p>Potencia para diseñadores, editores y puestos de trabajo que requieran óptimo desempeño en multitareas.</p>
                     </div>
-                </section>
+                </div>
+            </div>
+        </section>
             
     </main>
+    
+    <!--Footer final de pagina-->
     <footer>
-        <div class="footer_div">
+        <div class="footer_div bg-dark">
+            
             <div class="footer_iconos">
-                <img src="./assets/logo-amd.png" alt="">
-                <img src="./assets/Logo-hyperx.png" alt="">
-                <img src="./assets/logo-redragon.png" alt="">
-                <img src="./assets/Logo-NVIDIA.jpg" alt="">
+                <img src="./assets/logo-amd.png" alt="logo amd">
+                <img src="./assets/Logo-hyperx.png" alt="logo hyperx">
+                <img src="./assets/logo-redragon.png" alt="logo redragon">
+                <img src="./assets/Logo-NVIDIA.jpg" alt="logo nvidea">
             </div>
             <ul>
                 <li><a href="#"> Valores</a></li>
@@ -128,9 +378,9 @@
                 <li><a href="#">Equipo</a></li>
                 <li><a href="#">Sucursales</a></li>
             </ul>
-            <p>Fabian Ponczko &copy; Copyrigth 2022</p>
+            <p>Fabian Ponczko &copy; Copyright 2022</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.bundle.min.js"  ></script>
 </body>
 </html>

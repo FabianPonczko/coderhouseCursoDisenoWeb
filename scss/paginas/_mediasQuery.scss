@@ -1,0 +1,66 @@
+/* responsiv tablet */
+@media screen and (max-width:768px){
+    .oculta_menu{
+        display: none;
+    }
+    .navbar{
+        border-bottom: 1px double rgb(62, 66, 64);
+    }
+    nav li a{
+        padding-right: 0;
+        border: none;
+    }  
+    .texto_450 {
+        margin-left: 0px;
+    }
+    .footer_div {
+    display: block;
+    & p{
+        width: 100%;
+        }
+    }
+  
+/* paguina de nosotros */
+    .logo_grande{
+        display:none;
+    }
+    .main_section .main_div{
+        padding: 1rem;
+    }
+/* consulta */
+     .consulta{
+        margin: 80px 30px;
+    }
+/* mapa */
+
+    .mapa iframe{
+      max-width: 90vw;
+    }
+ 
+}
+/* responsiv mobile */
+@media screen and (min-width:426px){
+  .fade-out{
+    display: none;
+  }  
+}
+/* responsiv desktop */
+@media screen and (max-width:1024px){
+    .logo{
+        display: none;  
+    }
+
+    .card button p{
+        font-size: small;
+    }
+    .rounded {
+ 
+    & h1{    
+        font-size:x-large;
+    }
+    & p{
+        font-size: small;
+    }
+   
+    }
+}

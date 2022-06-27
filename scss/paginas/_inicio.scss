@@ -1,0 +1,20 @@
+/*Contenedor de las cartas con grid*/
+.card{
+    box-shadow: 0px 0px 10px 5px rgb(150, 150, 150);
+    height: 20rem;
+    & img {
+       height: 150px;
+    }
+    &:hover{
+        transform: scale(1.1);
+        transition-duration: 0.6s;
+    }
+   
+}
+  
+/*seccion destacados imagenes*/
+.img_450{
+    width: -webkit-fill-available;
+    border-radius: 25px;
+}
+     
