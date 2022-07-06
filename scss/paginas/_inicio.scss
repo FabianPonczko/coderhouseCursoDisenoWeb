@@ -1,9 +1,16 @@
 /*Contenedor de las cartas con grid*/
+.fuente{
+    font-family: 'Roboto Slab', serif;
+}
+.fuente-Amaranth{
+    font-family: 'Amaranth', cursive;
+}
 .card{
     box-shadow: 0px 0px 10px 5px rgb(150, 150, 150);
     height: 20rem;
+    font-family: 'Roboto Slab', serif;
     & img {
-       height: 150px;
+       height: 130px;
     }
     &:hover{
         transform: scale(1.1);
