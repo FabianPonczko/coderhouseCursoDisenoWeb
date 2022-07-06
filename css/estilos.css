@@ -44,11 +44,18 @@ body {
   display: block; }
 
 /*Contenedor de las cartas con grid*/
+.fuente {
+  font-family: 'Roboto Slab', serif; }
+
+.fuente-Amaranth {
+  font-family: 'Amaranth', cursive; }
+
 .card {
   box-shadow: 0px 0px 10px 5px #969696;
-  height: 20rem; }
+  height: 20rem;
+  font-family: 'Roboto Slab', serif; }
   .card img {
-    height: 150px; }
+    height: 130px; }
   .card:hover {
     transform: scale(1.1);
     transition-duration: 0.6s; }
@@ -69,15 +76,13 @@ body {
     width: 50rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly; }
+    justify-content: space-evenly;
+    font-family: 'Roboto Slab', serif; }
     .main_section .main_div h1 {
-      margin: 25px 0;
-      box-shadow: 0px 0px 10px 5px #969696;
+      margin-top: 25px;
       width: fit-content; }
     .main_section .main_div p {
-      padding: 30px;
-      box-shadow: 0px 0px 10px 5px #969696;
-      background-color: rgba(68, 115, 28, 0.058); }
+      padding: 30px 0px; }
 
 .logo_grande {
   padding: 15px;
@@ -96,9 +101,10 @@ body {
 /*pestaña consultas*/
 .consulta {
   margin: 40px 150px;
-  text-align: center; }
+  text-align: center;
+  font-family: 'Roboto Slab', serif; }
   .consulta h2, .consulta p {
-    margin-top: 35px; }
+    margin-top: 20px; }
   .consulta p {
     border-top: 1px solid rgba(130, 134, 165, 0.47);
     border-bottom: 1px solid rgba(130, 134, 165, 0.47); }
@@ -113,10 +119,12 @@ body {
 .hero img {
   width: inherit; }
 
+.Align-right {
+  margin-left: 330px; }
+
 /* pestaña ubicación*/
 .ubicacion {
   height: 550px;
-  background-image: url("../assets/img/globalizacion.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

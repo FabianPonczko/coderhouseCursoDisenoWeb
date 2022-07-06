@@ -2,8 +2,9 @@
 .consulta{
     margin: 40px 150px;
     text-align: center;
+    font-family: 'Roboto Slab', serif;
     & h2{
-        margin-top: 35px;
+        margin-top: 20px;
     }
     & p{
         @extend h2;
