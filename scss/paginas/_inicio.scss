@@ -1,7 +1,9 @@
 /*Contenedor de las cartas con grid*/
 .fuente{
     font-family: 'Roboto Slab', serif;
-}
+    &__fondo{
+        background-color: #100f27;}
+    }
 .fuente-Amaranth{
     font-family: 'Amaranth', cursive;
 }
