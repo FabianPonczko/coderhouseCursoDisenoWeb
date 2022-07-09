@@ -46,6 +46,8 @@ body {
 /*Contenedor de las cartas con grid*/
 .fuente {
   font-family: 'Roboto Slab', serif; }
+  .fuente__fondo {
+    background-color: #100f27; }
 
 .fuente-Amaranth {
   font-family: 'Amaranth', cursive; }
@@ -124,13 +126,13 @@ body {
 
 /* pestaña ubicación*/
 .ubicacion {
-  height: 550px;
+  height: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
   .ubicacion h3 {
     margin: 35px 0px; }
 
@@ -163,12 +165,24 @@ body {
     margin: 80px 30px; }
   /* mapa */
   .mapa iframe {
-    max-width: 90vw; } }
+    max-width: 90vw; }
+  /* ubicacion*/
+  .ubicacion {
+    flex-direction: column; }
+    .ubicacion p {
+      font-size: 0.6rem; } }
 
 /* responsiv mobile */
 @media screen and (min-width: 426px) {
   .fade-out {
-    display: none; } }
+    display: none; }
+  /* ubicacion*/
+  .ubicacion p {
+    font-size: 0.8rem; }
+  .ubicacion #span1 {
+    animation: span1 0.2s ease-in-out 1s both; }
+  .ubicacion #span3 {
+    animation: span3 0.2s ease-in-out 1s both; } }
 
 /* responsiv desktop */
 @media screen and (max-width: 1024px) {
@@ -488,62 +502,3 @@ body {
   90% {
     -webkit-transform: rotate(2deg);
     transform: rotate(2deg); } }
-
-/*Animacion contorno neon en foXx Computacion*/
-#span1 {
-  animation: span1 0.3s ease-in-out 2.5s both; }
-
-@keyframes span1 {
-  0% {
-    top: 0px;
-    left: -400px;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #a945c7); }
-  100% {
-    top: 0;
-    left: 0%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #a945c7); } }
-
-#span2 {
-  animation: span2 0.3s ease-in-out 2.5s both; }
-
-@keyframes span2 {
-  0% {
-    top: -200%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #a945c7); }
-  100% {
-    top: 0%; } }
-
-#span3 {
-  animation: span3 0.3s ease-in-out 2.5s both; }
-
-@keyframes span3 {
-  0% {
-    right: -600%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #a945c7); }
-  100% {
-    bottom: 0;
-    right: 0%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #a945c7); } }
-
-#span4 {
-  animation: span4 0.3s ease-in-out 2.5s both; }
-
-@keyframes span4 {
-  0% {
-    bottom: -600%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #a945c7); }
-  100% {
-    bottom: 0%; } }

@@ -36,13 +36,33 @@
     .mapa iframe{
       max-width: 90vw;
     }
- 
+ /* ubicacion*/
+    .ubicacion{
+        flex-direction: column;
+        & p{
+            font-size: 0.6rem;
+        }
+
+    }
 }
 /* responsiv mobile */
 @media screen and (min-width:426px){
   .fade-out{
     display: none;
   }  
+  /* ubicacion*/
+  .ubicacion{
+    & p{
+        font-size: 0.8rem;
+    }
+    #span1{
+        animation: span1 0.2s ease-in-out 1s both;
+      }
+    #span3{
+        animation: span3 0.2s ease-in-out 1s both;
+      }
+
+}
 }
 /* responsiv desktop */
 @media screen and (max-width:1024px){
@@ -63,4 +83,5 @@
     }
    
     }
+   
 }
