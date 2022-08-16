@@ -15,9 +15,9 @@ function actualizar(){
     
      
     carrito.innerHTML=``
-     
+     let total = 0
     enStorage.forEach(element => {
-         
+        
         const productos = document.createElement("div")
         productos.classList.add("items")
          
@@ -35,7 +35,7 @@ function actualizar(){
                 <p>$${element.precio}</p>
             </div>
             <div class="col-2">
-                <input type="number" value="${element.cantidad}"  style="width: 40px;">
+                <input id="cantidad" type="number" value="${element.cantidad}"  style="width: 40px;">
             </div>
             <div class="col-2">
                 <a href="#">
@@ -44,9 +44,14 @@ function actualizar(){
             </div>
             
         </div><hr>  `
-
+        
         carrito.appendChild(productos)
+        total += parseFloat(element.precio)
     });
+    carrito.innerHTML +=`
+    <div class="col-2">
+        <p>Total: $${total}</p>
+    </div>`
                
     const btnBorrarItem = document.querySelectorAll(".badge")
         
