@@ -11,6 +11,23 @@ body {
     width: 40px;
   }
 
+
+
+.carrito{
+  background-color:white;
+  min-height: 70vh; 
+  width: 60vw;
+}
+
+
+
+
+
+
+
+
+
+
 /*footer de todas las paginas*/
 .footer_div {
   margin-top: 0px;
