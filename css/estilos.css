@@ -7,6 +7,10 @@ body {
 .logo {
   width: 80px; }
 
+  #cart{
+    width: 40px;
+  }
+
 /*footer de todas las paginas*/
 .footer_div {
   margin-top: 0px;
