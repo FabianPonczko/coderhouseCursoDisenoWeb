@@ -12,11 +12,16 @@ body {
   }
 
 
+.carrito-contenedor{
+  background-color:white;
+  min-height: 70vh; 
+  width: 60vw;
+  }
 
 .carrito{
   background-color:white;
   min-height: 70vh; 
-  width: 60vw;
+  width: 58vw;
 }
 
 

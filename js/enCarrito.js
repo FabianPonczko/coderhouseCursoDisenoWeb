@@ -1,21 +1,30 @@
 
-const enStorage1 = localStorage.getItem("carrito")
-const enStorage = JSON.parse(enStorage1)
-const imagen = enStorage.imagen
-const producto = enStorage.producto
-const precio = enStorage.precio
-const cantidad = enStorage.cantidad
+let enStorage1 = []
+let enStorage = []
 
 
-enStorage.forEach(element => {
+
+actualizar()
+
+function actualizar(){
+    enStorage1 = localStorage.getItem("carrito")
+    enStorage = JSON.parse(enStorage1)
     
     
-    const productos = document.createElement("div")
     const carrito = document.querySelector(".carrito")
     
-    
-    productos.innerHTML =`
+     
+    carrito.innerHTML=``
+     
+    enStorage.forEach(element => {
+         
+        const productos = document.createElement("div")
+        productos.classList.add("items")
+         
+         
+        productos.innerHTML =`
         <div class="row mb-2" style="align-items: baseline;">
+            <p class="id visually-hidden">${element.id}</p>
             <div class="col-2">
                 <img src="${element.imagen}" alt="" style="width:100px ;">
             </div>
@@ -35,7 +44,23 @@ enStorage.forEach(element => {
             </div>
             
         </div><hr>  `
+
+        carrito.appendChild(productos)
+    });
+               
+    const btnBorrarItem = document.querySelectorAll(".badge")
+        
+    btnBorrarItem.forEach((element)=>{
+        element.addEventListener("click",(e)=>{
+            const evento = e.target
+            const contenedor = evento.closest(".row")
+            const id = contenedor.querySelector(".id").textContent
+            const itemBorrarIndex = enStorage.findIndex(ele=>ele.id==id)
+            enStorage.splice(itemBorrarIndex,1)
+            localStorage.setItem("carrito",JSON.stringify(enStorage))
+            actualizar()
+        })
+    })
     
-    carrito.appendChild(productos)
-    
-});
+}
+                
