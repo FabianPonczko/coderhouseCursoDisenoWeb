@@ -45,13 +45,24 @@ function actualizar(){
                 carrito.appendChild(productos)
                 total += parseFloat(element.precio)*element.cantidad   
         });
-        
+
+        if (enStorage.length<1){
+            carrito.innerHTML=`<div class="col-8 offset-3 fs-5 mt-4 text-danger">
+            <p> Ups... el carrito parece estar vacio!!!</p>
+            </div>`
+        }else{
+            carrito.innerHTML +=`
+        <div class="col-4 offset-8 fs-5 mt-1 ">
+        <p class="sumaTotal">Total: $${total}</p>
+        </div>`
+        }
+        /*
         //Actualizo img carrito con items agregados
         carrito.innerHTML +=`
         <div class="col-4 offset-8 fs-5 mt-1 ">
         <p class="sumaTotal">Total: $${total}</p>
         </div>`
-        
+        */
         //Boton de borrar los items del carrito
         const btnBorrarItem = document.querySelectorAll(".badge")
         btnBorrarItem.forEach((element)=>{
