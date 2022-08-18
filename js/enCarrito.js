@@ -1,7 +1,9 @@
 
 let enStorage1 = []
 let enStorage = []
+let total = 0
 
+const carrito = document.querySelector(".carrito")
 
 
 actualizar()
@@ -11,17 +13,14 @@ function actualizar(){
     enStorage = JSON.parse(enStorage1)
     
     
-    const carrito = document.querySelector(".carrito")
     
      
     carrito.innerHTML=``
-     let total = 0
-    enStorage.forEach(element => {
-        
+    
+     //Actualizo DOM con item en carrito
+     enStorage.forEach(element => {
         const productos = document.createElement("div")
         productos.classList.add("items")
-         
-         
         productos.innerHTML =`
         <div class="row mb-2" style="align-items: baseline;">
             <p class="id visually-hidden">${element.id}</p>
@@ -35,7 +34,7 @@ function actualizar(){
                 <p>$${element.precio}</p>
             </div>
             <div class="col-2">
-                <input id="cantidad" type="number" value="${element.cantidad}"  style="width: 40px;">
+                <input class="cantidad" type="number" value="${element.cantidad}"  style="width: 40px;">
             </div>
             <div class="col-2">
                 <a href="#">
@@ -46,15 +45,18 @@ function actualizar(){
         </div><hr>  `
         
         carrito.appendChild(productos)
-        total += parseFloat(element.precio)
+        total += parseFloat(element.precio)*element.cantidad
     });
+    
+    //Actualizo img carrito con items agregados
     carrito.innerHTML +=`
-    <div class="col-2">
+    <div class="col-2 offset-8 fs-5 mt-1 ">
         <p>Total: $${total}</p>
     </div>`
                
+    //Borrado con boton de borrar items del carrito
     const btnBorrarItem = document.querySelectorAll(".badge")
-        
+
     btnBorrarItem.forEach((element)=>{
         element.addEventListener("click",(e)=>{
             const evento = e.target
@@ -68,4 +70,24 @@ function actualizar(){
     })
     
 }
-                
+
+    //Actualizo cantidad de items en carrito
+    const itemCantidad = document.querySelectorAll(".cantidad")
+
+    itemCantidad.forEach(element=>{
+        element.addEventListener("change",(e)=>{
+            console.log(e.target)
+            
+            const target=e.target
+            const cantidad = Number(target.value)
+            
+            const contenedor = target.closest(".row")
+            const id = contenedor.querySelector(".id").textContent
+            const itemIndex = enStorage.findIndex(ele=>ele.id==id)
+            enStorage[itemIndex].cantidad=cantidad
+            localStorage.setItem("carrito",JSON.stringify(enStorage))
+            //actualizar()
+       
+        })
+        
+    })
