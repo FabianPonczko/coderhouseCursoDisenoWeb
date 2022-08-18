@@ -1,4 +1,4 @@
-
+//agregarAlcarrito.js
 //Boton Compra
 const btnDecompra = document.querySelectorAll(".btn-primary")
 
