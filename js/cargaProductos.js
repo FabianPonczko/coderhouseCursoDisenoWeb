@@ -1,5 +1,5 @@
 
-const BackupProductos = [
+const backupProductos = [
     {
     "id":1,
     "marca":"Epson",
@@ -51,7 +51,7 @@ const BackupProductos = [
     "altImagen":"micro ryzen 7"
 },
 {
-    "id":6,
+    "id":5,
     "marca":"Amd",
     "titulo": "Micro Ryzen 7",
     "descripcion":"Micro Ryzen 7 clase D velocidad máxima 32000 ciclos por segundo",
@@ -102,11 +102,40 @@ const BackupProductos = [
 }
 ]
 
+let paguinaVista = 0
 const contenedorProduction = document.querySelector(".container")
-const containerRow = contenedorProduction.querySelector(".row")
+const pageLink1 = document.querySelector(".page-item1")
+const pageLink2 = document.querySelector(".page-item2")
+
 
  
 
+
+
+pageLink1.addEventListener("click",()=>{
+    console.log("clase1",pageLink1.classList.contains("disabled"))
+        if (!pageLink1.classList.contains("disabled")){
+            pageLink1.classList.add("disabled")
+            pageLink2.classList.remove("disabled")
+            paguinaVista=0
+            creaRow(paguinaVista)
+        }
+})
+pageLink2.addEventListener("click",()=>{
+    console.log("clase2",pageLink2.classList.contains("disabled"))
+        if (!pageLink2.classList.contains("disabled")){
+            pageLink2.classList.add("disabled")
+            pageLink1.classList.remove("disabled")           
+            paguinaVista=1
+            creaRow(paguinaVista)
+        }
+})
+const productoRow1 = backupProductos.slice(0,5)
+const productoRow2 = backupProductos.slice(5,10)
+const listaProducto = [productoRow1,productoRow2]
+console.log(listaProducto)
+console.log(productoRow1)
+console.log(productoRow2)
 class Productos {
     constructor (id,marca,titulo,descripcion,precio,cantidad,imagen,altImagen){
         this.id = id
@@ -119,24 +148,35 @@ class Productos {
         this.altImagen = altImagen
     }
 }
-
-BackupProductos.forEach((e,index)=>{
-    containerRow.innerHTML +=`
-    <div class="col-12 col-md-6 col-lg">
-    <div class="card mb-4 rounded-2 fade-in">
-    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal${e.id}" style="height:20rem;">
-    <img src=${e.imagen} class="img-fluid" alt="${e.altImagen}" >
-    <h5>${e.titulo}</h5>
-    <p>${e.descripcion}</p>
-    </button>  
-    </div>
-    </div>
-    `
+const nuevaRow = document.createElement("div")
+    nuevaRow.classList.add("row")
+    nuevaRow.classList.add(`row${0}`)
    
-    if (index == 4){
-        containerRow.innerHTML +=`
-        <div class="row">
-        </div>`
-    }
-})
+    contenedorProduction.appendChild(nuevaRow)
 
+creaRow(paguinaVista)
+//listaProducto.forEach((cadaProducto,indice)=>{
+    function creaRow(paguinaVista){
+        
+        
+    
+    //const containerRow = contenedorProduction.querySelector(`.row${indice}`)
+    const containerRow = contenedorProduction.querySelector(`.row${0}`)
+    containerRow.innerHTML =``
+    //cadaProducto.forEach((e,indice)=>{
+        listaProducto[paguinaVista].forEach((e,indice)=>{
+        containerRow.innerHTML +=`
+        <div class="col-12 col-md-6 col-lg">
+        <div class="card mb-4 rounded-2 fade-in">
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal${e.id}" style="height:20rem;">
+        <img src=${e.imagen} class="img-fluid" alt="${e.altImagen}" >
+        <h5>${e.titulo}</h5>
+        <p>${e.descripcion}</p>
+        </button>  
+        </div>
+        </div>
+        `
+    })
+
+    }
+//})

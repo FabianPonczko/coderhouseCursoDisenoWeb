@@ -54,7 +54,10 @@ function actualizar(){
             carrito.innerHTML +=`
         <div class="col-4 offset-8 fs-5 mt-1 ">
         <p class="sumaTotal">Total: $${total}</p>
-        </div>`
+        </div>
+        <button type="button" class="btn btn-success btn-lg">Realizar Compra</button>
+        <button type="button" class="btn btn-warning btn-lg">Siguir Comprando</button>
+        `
         }
         /*
         //Actualizo img carrito con items agregados
