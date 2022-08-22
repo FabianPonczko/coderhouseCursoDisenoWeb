@@ -115,4 +115,13 @@ function actualizar(){
             })
             
         }
+        const pageWidth  = document.documentElement.scrollWidth;
+        const tituloCarrito = document.querySelector("#tituloListado")
+        if (pageWidth < 769){
+            tituloCarrito.style.display=""
+        }else{
+            console.log("display mayor")
+            tituloCarrito.style.display= "none"
+        }
+
 }

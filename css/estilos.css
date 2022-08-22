@@ -170,14 +170,16 @@ body {
 /* responsiv tablet */
 @media screen and (max-width: 768px) {
   .carrito-titulo{
+   display: none;
    font-size: .7rem;
+   text-transform: "Productos";
   }
   .carrito-contenedor{
-    width: 60vw;   
+    width: 80vw;   
     font-size: 0.7rem; 
   }
   .carrito{
-    width: 55vw;
+    width: auto;
   }
   .oculta_menu {
     display: none; }
@@ -212,7 +214,7 @@ body {
 /* responsiv mobile */
 @media screen and (min-width: 426px) {
   .carrito-titulo{
-    font-size: 1.6rem;
+    font-size: 1.3rem;
    }
    .carrito-contenedor{
     font-size: 1.2rem; 
