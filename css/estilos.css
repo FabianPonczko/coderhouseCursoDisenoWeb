@@ -21,7 +21,7 @@ body {
 .carrito{
   background-color:white;
   min-height: 70vh; 
-  width: 58vw;
+  width: 55vw;
 }
 
 
@@ -165,9 +165,20 @@ body {
 .mapa {
   padding: 5px;
   border: #100f27ed solid 1px; }
+  
 
 /* responsiv tablet */
 @media screen and (max-width: 768px) {
+  .carrito-titulo{
+   font-size: .7rem;
+  }
+  .carrito-contenedor{
+    width: 60vw;   
+    font-size: 0.7rem; 
+  }
+  .carrito{
+    width: 55vw;
+  }
   .oculta_menu {
     display: none; }
   .navbar {
@@ -200,6 +211,16 @@ body {
 
 /* responsiv mobile */
 @media screen and (min-width: 426px) {
+  .carrito-titulo{
+    font-size: 1.6rem;
+   }
+   .carrito-contenedor{
+    font-size: 1.2rem; 
+  }
+  .carrito-contenedor{
+    font-size: 0.9rem; 
+  }
+  
   .fade-out {
     display: none; }
   /* ubicacion*/

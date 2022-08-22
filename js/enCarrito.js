@@ -21,21 +21,21 @@ function actualizar(){
         const productos = document.createElement("div")
         productos.classList.add("items")
         productos.innerHTML =
-                            `<div class="row contenedorCarrito mb-2" style="align-items: baseline;">
+                            `<div class="row contenedorCarrito mb-2 text-center" style="align-items: baseline;">
                                 <p class="id visually-hidden">${element.id}</p>
-                                <div class="col-2">
+                                <div class="col-12 col-lg-2">
                                     <img src="${element.imagen}" alt="" style="width:100px ;">
                                 </div>
-                                <div class="col-4">
+                                <div class="col-12 col-lg-4">
                                     <p>${element.producto}</p>
                                 </div>
-                                <div class="col-2 precio">
+                                <div class="col-12 col-lg-2 precio">
                                     <p>$ <span class="valorPrecio">${element.precio}</span></p>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-6 col-lg-2">
                                     <input class="cantidad" type="number" min=1 value="${element.cantidad}"  style="width: 40px;">
                                 </div>
-                                <div class="col-2">
+                                <div class="col-6 col-lg-2">
                                     <a href="#">
                                         <span class="badge rounded-pill text-bg-danger fs-5">X</span>
                                     </a>
@@ -49,33 +49,27 @@ function actualizar(){
 
         if (enStorage.length<1){
             carrito.innerHTML=`<div class="col-8 offset-3 fs-5 mt-4 text-danger">
-            <p> Ups... el carrito parece estar vacio!!!</p>
-            </div>`
+                                <p> Ups... el carrito parece estar vacio!!!</p>
+                               </div> `
         }else{
-            carrito.innerHTML +=`
-        <div class="row">
-        <div class="col-4 offset-8 fs-5 mt-1 ">
-        <p class="sumaTotal">Total: $${total}</p>
-        </div>
-        <div class="col-3 offset-3">
-        <button type="button" class="btn btn-success btn-lg">Realizar Compra</button>
-        </div>
-        <div class="col-6 ">
-        <a href="index.html">
-        <button type="button" class="btn btn-warning btn-lg mb-5">Siguir Comprando
-        </button>
-        </a>
-        </div>
-        </div>
-        `
+            carrito.innerHTML +=`<div class="row justify-content-end">
+                                    <div class="col-12 col-lg-4 fs-5 mt-1 ">
+                                        <p class="sumaTotal">Total: $${total}</p>
+                                    </div>
+                                
+                                </div>
+                                <div class="row justify-content-evenly">
+                                    <div class="col-12 col-lg-4">
+                                        <button type="button" class="btn btn-success btn-lg">Realizar Compra</button>
+                                    </div>
+                                    <div class="col-12 col-lg-4 ">
+                                        <a href="index.html">
+                                            <button type="button" class="btn btn-warning btn-lg mb-5">Siguir Comprando</button>
+                                        </a>
+                                    </div>
+                                </div>  `
         }
-        /*
-        //Actualizo img carrito con items agregados
-        carrito.innerHTML +=`
-        <div class="col-4 offset-8 fs-5 mt-1 ">
-        <p class="sumaTotal">Total: $${total}</p>
-        </div>`
-        */
+        
         //Boton de borrar los items del carrito
         const btnBorrarItem = document.querySelectorAll(".badge")
         btnBorrarItem.forEach((element)=>{
