@@ -17,6 +17,7 @@ function actualizar(){
     //Actualizo DOM con item en carrito
     carrito.innerHTML=``
     enStorage.forEach(element => {
+        console.log("actualizo cantidad")
         const productos = document.createElement("div")
         productos.classList.add("items")
         productos.innerHTML =
@@ -52,11 +53,20 @@ function actualizar(){
             </div>`
         }else{
             carrito.innerHTML +=`
+        <div class="row">
         <div class="col-4 offset-8 fs-5 mt-1 ">
         <p class="sumaTotal">Total: $${total}</p>
         </div>
+        <div class="col-3 offset-3">
         <button type="button" class="btn btn-success btn-lg">Realizar Compra</button>
-        <button type="button" class="btn btn-warning btn-lg">Siguir Comprando</button>
+        </div>
+        <div class="col-6 ">
+        <a href="index.html">
+        <button type="button" class="btn btn-warning btn-lg mb-5">Siguir Comprando
+        </button>
+        </a>
+        </div>
+        </div>
         `
         }
         /*

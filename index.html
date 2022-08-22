@@ -33,6 +33,7 @@
                   <img  id="cart" src="./assets/cart-removebg-preview.png" alt="cart">
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                     <span class="encarrito">0</span>
+                    <i></i>
                     <!-- <span class="visually-hidden">unread messages</span> -->
                   </span>
                 </a>
@@ -179,148 +180,32 @@
 
         <!-- Contenedor de cartas con hover -->
           <section class="container mt-5 mb-4 text-center fuente">
-           <!--
-
-             <div class="row">
-               
-            </div>
-          -->
+          
         </section>
 
         <!-- nuevo control de item-->
 
-       
-
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center">
-            <a class="page-link" href="javascript:void(0);" aria-label="Previous">
+            <a class="page-link page-link-L" href="javascript:void(0);" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
             </a>
             <!-- <li class="page-item"><a class="page-link" href="#">1</a></li> -->
-            <li class="page-item1 disabled" ><a class="page-link" href="javascript:void(0);">1</a></li>
+            <li class="page-item1 active " ><a class="page-link " href="javascript:void(0);">1</a></li>
             <li class="page-item2" ><a class="page-link" href="javascript:void(0);">2</a></li>
-            <a class="page-link" href="javascript:void(0);" aria-label="Next">
+            <li class="page-item3" ><a class="page-link" href="javascript:void(0);">3</a></li>
+            <a class="page-link page-link-R" href="javascript:void(0);" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
             </a>
           </ul>
         </nav>
 
-
-        <section class="fuente">
+        <!-- Modal del Contenedor de cartas -->
+        <section class="fuente modal-cart">
           
-          
+        </section> 
 
-          <!-- Modal 5  Articulo 5 de los card -->
-            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <p class ="id visually-hidden">5</p>
-                  <div class="modal-header flex-column">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <h5 class="modal-title" id="exampleModalLabel5">Micro Ryzen</h5>
-                    <img src="./assets/ryzen.jpeg" class="img-fluid" alt="imagen de micro ryzen" >
-                  </div>
-                  <div class="modal-body">
-                    <p>AMD ryzen clase D con velocidades máximas de 32000 ciclos por segundo.</p>
-                    <p>Llevalo por $<span class="precio">45000</span>  -  contado</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Modal 4  Articulo 4 de los card -->
-            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <p class ="id visually-hidden">4</p>
-                  <div class="modal-header flex-column">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <h5 class="modal-title" id="exampleModalLabel4">Monitor Gigabyte</h5>
-                    <img src="./assets/monitor.jpeg" class="img-fluid" alt="imagen de monitor" >
-                  </div>
-                  <div class="modal-body">
-                    <p>Monitor gamer con tasa de refresco de 144 mhz soporte lateral y inclinación de 8 grados regulable.</p>
-                    <p>Llevalo por $<span class="precio">52000</span> - solo contado</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-             <!-- Modal 3  Articulo 3 de los card -->
-             <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <p class ="id visually-hidden">3</p>
-                  <div class="modal-header flex-column">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <h5 class="modal-title" id="exampleModalLabel3">Notebook HP</h5>
-                    <img src="./assets/notebook_hp.jpeg" class="img-fluid" alt="imagen de notebook" >
-                  </div>
-                  <div class="modal-body">
-                    <p>HP 6000us intel core i7 disco 240gb memoria 8gb aceleradora dedicada.</p>
-                    <p>Llevalo por $<span class="precio">145000</span> - solo contado</p>  
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-             <!-- Modal 2  Articulo 2 de los card -->
-             <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <p class ="id visually-hidden">2</p>
-                  <div class="modal-header flex-column">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <h5 class="modal-title" id="exampleModalLabel2">Auriculares H-200</h5>
-                    <img src="./assets/auricular.jpeg" class="img-fluid" alt="imagen de auricular" >
-                  </div>
-                  <div class="modal-body">
-                    <p>Auricular con micrófono y auriculares de alta calidad.</p>
-                    <p>Llevalo por $<span class="precio">12000</span> - solo contado</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-             <!-- Modal 1  Articulo 1 de los card -->
-             <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <p class ="id visually-hidden">1</p>
-                  <div class="modal-header flex-column">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <h5 class="modal-title" id="exampleModalLabel1">Epson Sp 450x</h5>
-                    <img src="./assets/impresora.jpeg" class="img-fluid" alt="imagen de impresora" >
-                  </div>
-                  <div class="modal-body">
-                    <p>Impresora epson sistema chorro de tinta continuo 1200dpi garantia 12 meses.</p>
-                    <p>LLevalo por $<span class="precio">25000</span>  - solo contado</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </section>
-
+      
         <!--Productos destacado de la semana-->
         <section>
 
