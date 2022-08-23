@@ -54,16 +54,17 @@ function actualizar(){
         //Cargo total y botones de compra
         }else{
             carrito.innerHTML +=`<div class="row justify-content-end">
-                                    <div class="col-10 col-sm-8 col-lg-4 fs-5 mt-1 ">
-                                        <p class="sumaTotal">Total: $${total}</p>
+                                    <div class="col-12 col-sm-6 col-lg-4 fs-5 mt-1 ">
+                                        <p class="sumaTotal" style="
+                                        text-align: center">Total: $${total}</p>
                                     </div>
                                 
                                 </div>
                                 <div class="row justify-content-evenly">
-                                    <div class="col-10 col-sm-6 col-lg-4">
+                                    <div class="col-8 col-sm-6 col-lg-4">
                                         <button type="button" class="btn btn-success btn-lg">Realizar Compra</button>
                                     </div>
-                                    <div class="col-10 col-sm-6 col-lg-4 ">
+                                    <div class="col-8 col-sm-6 col-lg-4 ">
                                         <a href="index.html">
                                             <button type="button" class="btn btn-warning btn-lg mb-5">Siguir Comprando</button>
                                         </a>
