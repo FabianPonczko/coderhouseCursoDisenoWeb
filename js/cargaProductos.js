@@ -153,7 +153,8 @@ const backupProductos = [
 
 ]
 
-let paguinaVista = 0
+//generar paginas 1,2.3 para vistas de 5 productos en las cart
+let paguinaVista = 0 
 const contenedorProduction = document.querySelector(".container")
 const pageLink1 = document.querySelector(".page-item1")
 const pageLink2 = document.querySelector(".page-item2")
@@ -162,30 +163,25 @@ const pageLink_L = document.querySelector(".page-link-L")
 const pageLink_R = document.querySelector(".page-link-R")
 
 
+//funcion crea clase "active"
 function paginaActiva (){
     pageLink1.classList.remove("active")
     pageLink2.classList.remove("active")
     pageLink3.classList.remove("active")
-    pageLink1.classList.remove("active")
-    pageLink2.classList.remove("active")
-    pageLink3.classList.remove("active")
         switch (paguinaVista){
-            case 0: // primer pagina
-                pageLink1.classList.add("active")
+            case 0: 
                 pageLink1.classList.add("active")
             break
             case 1:
                 pageLink2.classList.add("active")
-                pageLink2.classList.add("active")
             break
             case 2:
-                pageLink3.classList.add("active")
                 pageLink3.classList.add("active")
             break
         }
 }
 
-
+    //Eventos click por paginas
     pageLink1.addEventListener("click",()=>{
             if (!pageLink1.classList.contains("active")){
                 pageLink1.classList.add("active")
@@ -217,6 +213,7 @@ function paginaActiva (){
             }
     })
 
+    //Eventos click en flechas
     pageLink_L.addEventListener("click",()=>{
         if (paguinaVista>0){
             paguinaVista --
@@ -234,14 +231,13 @@ function paginaActiva (){
         }
     })
 
-
+    //Copias de backup de array 
     const productoRow1 = backupProductos.slice(0,5)
     const productoRow2 = backupProductos.slice(5,10)
     const productoRow3 = backupProductos.slice(10,15)
     const listaProducto = [productoRow1,productoRow2,productoRow3]
-    console.log(listaProducto)
-    console.log(productoRow1)
-    console.log(productoRow2)
+    
+    //Clase principal para crear nuevos productos
     class Productos {
         constructor (id,marca,titulo,descripcion,precio,cantidad,imagen,altImagen){
             this.id = id
@@ -254,14 +250,15 @@ function paginaActiva (){
             this.altImagen = altImagen
         }
     }
+    
+    //Se crea fila de cart principal
     const nuevaRow = document.createElement("div")
     nuevaRow.classList.add("row")
     nuevaRow.classList.add(`row${0}`)
-   
     contenedorProduction.appendChild(nuevaRow)
 
     creaRow(paguinaVista)
-    //listaProducto.forEach((cadaProducto,indice)=>{    
+     
     function creaRow(paguinaVista){        
         const containerModalCart = document.querySelector(`.modal-cart`)
         console.log(containerModalCart)

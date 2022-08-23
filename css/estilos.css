@@ -172,7 +172,6 @@ body {
   .carrito-titulo{
    display: none;
    font-size: .7rem;
-   text-transform: "Productos";
   }
   .carrito-contenedor{
     width: 80vw;   

@@ -1,23 +1,22 @@
-// enCarrito
+
 //Variables del storage 
 let enStorage1 = []
 let enStorage = []
 
-
+//carrito en el DOM
 const carrito = document.querySelector(".carrito")
 
 
 actualizar()
-//funcion principal
+//funcion principal para actualizar
 function actualizar(){
     let total = 0
     enStorage1 = localStorage.getItem("carrito")
     enStorage = JSON.parse(enStorage1)
     
-    //Actualizo DOM con item en carrito
+    //Actualizo DOM carrito con items del storage
     carrito.innerHTML=``
     enStorage.forEach(element => {
-        console.log("actualizo cantidad")
         const productos = document.createElement("div")
         productos.classList.add("items")
         productos.innerHTML =
@@ -47,10 +46,12 @@ function actualizar(){
                 total += parseFloat(element.precio)*element.cantidad   
         });
 
+        //Si carrito vacio cartel
         if (enStorage.length<1){
             carrito.innerHTML=`<div class="col-8 offset-3 fs-5 mt-4 text-danger">
                                 <p> Ups... el carrito parece estar vacio!!!</p>
                                </div> `
+        //Cargo total y botones de compra
         }else{
             carrito.innerHTML +=`<div class="row justify-content-end">
                                     <div class="col-12 col-lg-4 fs-5 mt-1 ">
@@ -115,6 +116,8 @@ function actualizar(){
             })
             
         }
+        
+        //Detecto tamaño de la pagina para borrar titulo para mejorar el responsive
         const pageWidth  = document.documentElement.scrollWidth;
         const tituloCarrito = document.querySelector("#tituloListado")
         if (pageWidth < 769){

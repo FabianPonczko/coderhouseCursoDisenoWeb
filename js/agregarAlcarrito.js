@@ -1,12 +1,9 @@
 
-// ** agregarAlcarrito.js **
 
 cargarAlCarrito()
 
+//funcion principal
 function cargarAlCarrito (){
-
-
-
 
     //Boton Compra
     const btnDecompra = document.querySelectorAll(".btn-primary")
@@ -17,8 +14,11 @@ function cargarAlCarrito (){
     //Boton de cantidad
     constbtnCantidad = document.querySelectorAll("cantidad")
 
+    //Obtener el storage
     const storage1 = localStorage.getItem("carrito")
     const storage = JSON.parse(storage1)
+    
+    //Variables
     let contenedorCarrito =[]
     let numeroCarrito=0
 
@@ -27,7 +27,7 @@ function cargarAlCarrito (){
         numeroCarrito += elemento.cantidad
     })
 
-    //Actualiza items en el carrito DOM
+    //Actualiza el DOM con items en el carrito
     if (storage){
         enCarrito.innerHTML = numeroCarrito
         contenedorCarrito = storage
