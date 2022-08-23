@@ -14,15 +14,19 @@ function cargarAlCarrito (){
     //Boton de cantidad
     constbtnCantidad = document.querySelectorAll("cantidad")
 
-    //Obtener el storage
-    const storage1 = localStorage.getItem("carrito")
-    const storage = JSON.parse(storage1)
-    
     //Variables
     let contenedorCarrito =[]
     let numeroCarrito=0
 
-    //calcula numero de productos en carrito
+    //Obtener el storage
+    if (!localStorage.getItem("carrito")){
+       localStorage.setItem("carrito",JSON.stringify([]))
+    }
+    const storage1 = localStorage.getItem("carrito")
+    const storage = JSON.parse(storage1)
+    
+    
+    //calcula numero de productos en carrito    
     storage.forEach(elemento=>{
         numeroCarrito += elemento.cantidad
     })
@@ -49,7 +53,7 @@ function cargarAlCarrito (){
     //Por cada boton de compra genero un evento click
     btnDecompra.forEach((btn)=>{
         btn.addEventListener("click",(event)=>{
-            console.log(btnDecompra)
+            
             const cadaBoton = event.target
             const contenedor = cadaBoton.closest(".modal-content")
             const id = contenedor.querySelector(".id").textContent

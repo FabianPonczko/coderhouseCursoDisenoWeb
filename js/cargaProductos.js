@@ -261,7 +261,7 @@ function paginaActiva (){
      
     function creaRow(paguinaVista){        
         const containerModalCart = document.querySelector(`.modal-cart`)
-        console.log(containerModalCart)
+        
         //const containerRow = contenedorProduction.querySelector(`.row${indice}`)
         const containerRow = contenedorProduction.querySelector(`.row${0}`)
         containerRow.innerHTML =``
