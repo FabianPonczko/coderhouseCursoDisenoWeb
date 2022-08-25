@@ -162,7 +162,6 @@ const pageLink3 = document.querySelector(".page-item3")
 const pageLink_L = document.querySelector(".page-link-L")
 const pageLink_R = document.querySelector(".page-link-R")
 
-
 //funcion crea clase "active"
 function paginaActiva (){
     pageLink1.classList.remove("active")
@@ -267,7 +266,7 @@ function paginaActiva (){
         containerRow.innerHTML =``
         containerModalCart.innerHTML =``
         //cadaProducto.forEach((e,indice)=>{
-        listaProducto[paguinaVista].forEach((e,indice)=>{
+        listaProducto[paguinaVista].forEach((e)=>{
             containerRow.innerHTML +=`
                 <div class="col-12 col-md-6 col-lg">
                     <div class="card mb-4 rounded-2 fade-in">
@@ -300,7 +299,6 @@ function paginaActiva (){
                     </div>
                 </div>`
         })
-
     }
 
 

@@ -1,19 +1,16 @@
 
 //Variables del storage 
-let enStorage1 = []
 let enStorage = []
 
 //carrito en el DOM
 const carrito = document.querySelector(".carrito")
 
-
 actualizar()
 //funcion principal para actualizar
 function actualizar(){
     let total = 0
-    enStorage1 = localStorage.getItem("carrito")
-    enStorage = JSON.parse(enStorage1)
-    
+    enStorage =JSON.parse(localStorage.getItem("carrito"))
+        
     //Actualizo DOM carrito con items del storage
     carrito.innerHTML=``
     enStorage.forEach(element => {
@@ -87,8 +84,7 @@ function actualizar(){
                 actualizar()
             })
         })
-            
-            
+               
         //Variación cantidad de items en carrito
         const itemCantidad = document.querySelectorAll(".contenedorCarrito")
         const totalSuma = document.querySelector(".sumaTotal")
@@ -104,7 +100,6 @@ function actualizar(){
                 localStorage.setItem("carrito",JSON.stringify(enStorage))
                 actualizaTotal()
             })
-            
         })
         
         //Actualiza sumaTotal
@@ -115,17 +110,11 @@ function actualizar(){
                 totalSuma.innerHTML =`  
                 <p class="sumaTotal">Total: $${total}</p>`
             })
-            
         }
         
         //Detecto tamaño de la pagina para borrar titulo para mejorar el responsive
         const pageWidth  = document.documentElement.scrollWidth;
         const tituloCarrito = document.querySelector("#tituloListado")
-        if (pageWidth < 769){
-            tituloCarrito.style.display=""
-        }else{
-            console.log("display mayor")
-            tituloCarrito.style.display= "none"
-        }
-
+        
+        pageWidth < 769 ? tituloCarrito.style.display="" : tituloCarrito.style.display= "none"
 }

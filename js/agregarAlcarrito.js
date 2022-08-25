@@ -11,20 +11,12 @@ function cargarAlCarrito (){
     //Img Carrito
     const enCarrito = document.querySelector(".encarrito")
 
-    //Boton de cantidad
-    constbtnCantidad = document.querySelectorAll("cantidad")
-
     //Variables
     let contenedorCarrito =[]
     let numeroCarrito=0
 
     //Obtener el storage
-    if (!localStorage.getItem("carrito")){
-       localStorage.setItem("carrito",JSON.stringify([]))
-    }
-    const storage1 = localStorage.getItem("carrito")
-    const storage = JSON.parse(storage1)
-    
+    const storage = JSON.parse(localStorage.getItem("carrito"))||localStorage.setItem("carrito",JSON.stringify([])) 
     
     //calcula numero de productos en carrito    
     storage.forEach(elemento=>{
@@ -46,9 +38,7 @@ function cargarAlCarrito (){
             this.precio= precio
             this.cantidad = cantidad
         }
-        
     }
-
 
     //Por cada boton de compra genero un evento click
     btnDecompra.forEach((btn)=>{
@@ -65,8 +55,8 @@ function cargarAlCarrito (){
             const nuevoItem = new Carrito(id,imagen,titulo,precio)
                 for (i = 0 ;i<storage.length;i++){
                     if(storage[i].id==id){
-                        storage[i].cantidad +=1
-                        numeroCarrito +=1
+                        storage[i].cantidad ++
+                        numeroCarrito ++
             
                         //actualizo el store
                         localStorage.setItem("carrito",JSON.stringify(contenedorCarrito))
@@ -75,22 +65,18 @@ function cargarAlCarrito (){
                     }
                 }
         
-                
             //Agrego nuevo item al carrito    
             contenedorCarrito.push(nuevoItem)
             
             //Suma item en carrito
-            numeroCarrito +=1
+            numeroCarrito ++
             
             //actualizo store
             localStorage.setItem("carrito",JSON.stringify(contenedorCarrito))
-            
             
             //Actualizo DOM - carrito
             enCarrito.innerHTML = numeroCarrito
             
         })
-    
     })
-
 }
