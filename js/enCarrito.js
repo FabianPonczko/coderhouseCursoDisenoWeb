@@ -93,10 +93,12 @@ function actualizar(){
                         enStorage.splice(itemBorrarIndex,1)
                         localStorage.setItem("carrito",JSON.stringify(enStorage))
                         actualizar()
-                      Swal.fire(
-                        'Eliminado!',
-                        'Producto eliminado del carrito.',
-                        'success'
+                      Swal.fire({
+                        icon: 'success',
+                        title: 'Producto eliminado del carrito.',
+                        showConfirmButton: false,
+                        timer: 1500}
+
                       )
                     }
                   })
