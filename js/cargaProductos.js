@@ -294,7 +294,7 @@ function paginaActiva (){
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agregar Al Carrito</button>
                         </div>
                     </div>
                 </div>`

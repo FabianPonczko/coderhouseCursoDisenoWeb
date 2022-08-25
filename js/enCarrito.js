@@ -73,12 +73,35 @@ function actualizar(){
         const btnBorrarItem = document.querySelectorAll(".badge")
         btnBorrarItem.forEach((element)=>{
             element.addEventListener("click",(e)=>{
-                const evento = e.target
-                const contenedor = evento.closest(".row")
-                const id = contenedor.querySelector(".id").textContent
-                const itemBorrarIndex = enStorage.findIndex(ele=>ele.id==id)
-                enStorage.splice(itemBorrarIndex,1)
-                localStorage.setItem("carrito",JSON.stringify(enStorage))
+                
+                console.log("aqui")
+
+                Swal.fire({
+                    title: 'Esta seguro?',
+                    text: "El producto se eliminara del carrito!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, Eliminar!'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        const evento = e.target
+                        const contenedor = evento.closest(".row")
+                        const id = contenedor.querySelector(".id").textContent
+                        const itemBorrarIndex = enStorage.findIndex(ele=>ele.id==id)
+                        enStorage.splice(itemBorrarIndex,1)
+                        localStorage.setItem("carrito",JSON.stringify(enStorage))
+                        actualizar()
+                      Swal.fire(
+                        'Eliminado!',
+                        'Producto eliminado del carrito.',
+                        'success'
+                      )
+                    }
+                  })
+
+                
                 
                 //Actualizar el DOM despues de borrar un item
                 actualizar()

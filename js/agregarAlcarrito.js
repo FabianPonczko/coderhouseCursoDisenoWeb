@@ -61,6 +61,12 @@ function cargarAlCarrito (){
                         //actualizo el store
                         localStorage.setItem("carrito",JSON.stringify(contenedorCarrito))
                         enCarrito.innerHTML = numeroCarrito
+
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Producto agregado con exito',
+                          })
                     return     
                     }
                 }
@@ -68,6 +74,12 @@ function cargarAlCarrito (){
             //Agrego nuevo item al carrito    
             contenedorCarrito.push(nuevoItem)
             
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Producto agregado con exito',
+              })
+
             //Suma item en carrito
             numeroCarrito ++
             
