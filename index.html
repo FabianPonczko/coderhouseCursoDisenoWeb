@@ -48,8 +48,8 @@
                   <div>
                     
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-scroll" >
-                        <form class="d-flex">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <form class="d-flex form">
+                          <input autocomplete="off" class="form-control me-2" id="inputBuscado" type="search" placeholder="Buscar Productos o Marcas" aria-label="Search">
                           <button class="btn btn-outline-success me-2" type="submit">Search</button>
 
                         </form>  
@@ -78,6 +78,11 @@
     </header>
     
     <main>
+
+       <!-- Contenedor del modal de busqueda -->
+       <selection class="contBusqueda  shadow" style="position: absolute; background-color:white; z-index: 10;width:480px; left: 520px; top: 70px">
+            
+      </selection>
         
       <!-- Carrusel -->
 
@@ -176,7 +181,7 @@
             </div>
         </div>
        
-        
+       
 
         <!-- Contenedor de cartas con hover -->
           <section class="container mt-5 mb-4 text-center fuente">

@@ -11,6 +11,11 @@ body {
     width: 40px;
   }
 
+  .form-control{
+    width: 32vw;
+  }
+ 
+
 
 .carrito-contenedor{
   background-color:white;
@@ -24,7 +29,13 @@ body {
   width: 55vw;
 }
 
-
+.resBusqueda{
+  align-items: center;
+  height: 70px;
+}
+.resBusqueda:hover{
+  background-color: #f31111;
+}
 
 
 
@@ -169,6 +180,13 @@ body {
 
 /* responsiv tablet */
 @media screen and (max-width: 768px) {
+
+  #inputBuscado {
+    display:none;
+  }
+  .btn-outline-success{
+    display:none;
+  }
   .carrito-titulo{
    display: none;
    font-size: .7rem;

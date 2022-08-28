@@ -5,9 +5,6 @@ cargarAlCarrito()
 //funcion principal
 function cargarAlCarrito (){
 
-    //Boton Compra
-    const btnDecompra = document.querySelectorAll(".btn-primary")
-
     //Img Carrito
     const enCarrito = document.querySelector(".encarrito")
 
@@ -40,55 +37,142 @@ function cargarAlCarrito (){
         }
     }
 
-    //Por cada boton de compra genero un evento click
-    btnDecompra.forEach((btn)=>{
-        btn.addEventListener("click",(event)=>{
-            
-            const cadaBoton = event.target
-            const contenedor = cadaBoton.closest(".modal-content")
-            const id = contenedor.querySelector(".id").textContent
-            const titulo = contenedor.querySelector(".modal-title").textContent
-            const imagen = contenedor.querySelector(".img-fluid").src
-            const precio = contenedor.querySelector(".precio").textContent
-            
-            //genero los item del carrito y lo cargo en el contenedor
-            const nuevoItem = new Carrito(id,imagen,titulo,precio)
-                for (i = 0 ;i<storage.length;i++){
-                    if(storage[i].id==id){
-                        storage[i].cantidad ++
-                        numeroCarrito ++
-            
-                        //actualizo el store
-                        localStorage.setItem("carrito",JSON.stringify(contenedorCarrito))
-                        enCarrito.innerHTML = numeroCarrito
 
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: 'Producto agregado con exito',
-                          })
-                    return     
-                    }
-                }
-        
-            //Agrego nuevo item al carrito    
-            contenedorCarrito.push(nuevoItem)
+    //modal de busqueda
+    let buscando = ""
+    const containerBusqueda = document.querySelector(".contBusqueda")
+    const itemBuscado = document.getElementById("inputBuscado")
+    const containerModalCart = document.querySelector(".modal-cart")
+    
+    itemBuscado.addEventListener("input",(e)=>{    
+            buscando = itemBuscado.value
+            const encontrado = backupProductos.filter((ele=>ele.titulo.toUpperCase().includes(itemBuscado.value.toUpperCase())))
+            containerBusqueda.innerHTML=""
             
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Producto agregado con exito',
-              })
-
-            //Suma item en carrito
-            numeroCarrito ++
+        if (buscando.length>1){   
+            encontrado.forEach((element)=>{
+                const productos = document.createElement("div")
+                productos.classList.add("items")
+                productos.innerHTML = `
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal${element.id}" style="display:contents;">
+                            <div class="row resBusqueda text-center m-2">
+                                <p class="id visually-hidden">${element.id}</p>
+                                <div class="col-12 col-lg-2">
+                                    <img src="${element.imagen}" alt="" style="width:62px ;">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <p>${element.titulo}</p>
+                                </div>
+                                <div class="col-12 col-lg-4 precio">
+                                    <p>$ <span class="valorPrecio">${element.precio}</span></p>
+                                </div>
+                            </div>
+                        </button>`
+                containerBusqueda.appendChild(productos)
+            })
             
-            //actualizo store
-            localStorage.setItem("carrito",JSON.stringify(contenedorCarrito))
-            
-            //Actualizo DOM - carrito
-            enCarrito.innerHTML = numeroCarrito
-            
-        })
+            containerModalCart.innerHTML =``
+            backupProductos.forEach((e)=>{
+                containerModalCart.innerHTML +=` 
+                    <div class="modal fade" id="exampleModal${e.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <p class ="id visually-hidden">${e.id}</p>
+                            <div class="modal-header flex-column">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h5 class="modal-title" id="exampleModalLabel${e.id}">${e.titulo}</h5>
+                                <img src=${e.imagen} class="img-fluid" alt=${e.altImagen} >
+                            </div>
+                            <div class="modal-body">
+                                <p>${e.descripcion}</p>
+                                <p>Llevalo por $<span class="precio">${e.precio}</span>  -  contado</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agregar Al Carrito</button>
+                            </div>
+                        </div>
+                    </div>`
+                    
+            actualizo()
+            })      
+        }
     })
+            
+
+    actualizo()
+    function actualizo(){
+        
+        //Por cada boton de compra genero un evento click
+        const btnDecompra = document.querySelectorAll(".btn-primary")
+        btnDecompra.forEach((btn)=>{
+            btn.addEventListener("click",(event)=>{
+                itemBuscado.value=""       
+                containerBusqueda.innerHTML=""  
+                console.log("boton apretado")
+                const cadaBoton = event.target
+                const contenedor = cadaBoton.closest(".modal-content")
+                const id = contenedor.querySelector(".id").textContent
+                const titulo = contenedor.querySelector(".modal-title").textContent
+                const imagen = contenedor.querySelector(".img-fluid").src
+                const precio = contenedor.querySelector(".precio").textContent
+                
+                //genero los item del carrito y lo cargo en el contenedor
+                const nuevoItem = new Carrito(id,imagen,titulo,precio)
+                    for (i = 0 ;i<storage.length;i++){
+                        if(storage[i].id==id){
+                            storage[i].cantidad ++
+                            numeroCarrito ++
+                
+                            //actualizo el store
+                            localStorage.setItem("carrito",JSON.stringify(contenedorCarrito))
+                            enCarrito.innerHTML = numeroCarrito
+
+                            //mensage agregado
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Producto agregado con exito',
+                            })
+                        return     
+                        }
+                    }
+            
+                //Agrego nuevo item al carrito    
+                contenedorCarrito.push(nuevoItem)
+                
+                //mensage agregado
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Producto agregado con exito',
+                })
+
+                //Suma item en carrito
+                numeroCarrito ++
+                
+                //actualizo store
+                localStorage.setItem("carrito",JSON.stringify(contenedorCarrito))
+                
+                //Actualizo DOM - carrito
+                enCarrito.innerHTML = numeroCarrito
+                
+                console.log("actualizo",itemBuscado.value )
+            
+            })
+        
+        })
+        
+
+        //Por cada cancelar de compra genero un evento click
+        const btnCancelar = document.querySelectorAll(".btn-secondary")
+            btnCancelar.forEach((btn)=>{
+                btn.addEventListener("click",(event)=>{
+                    console.log("cancelar compra")
+                    itemBuscado.value=""       
+                    containerBusqueda.innerHTML=""  
+                })
+
+            })
+    }
 }

@@ -97,7 +97,7 @@ function actualizar(){
                         icon: 'success',
                         title: 'Producto eliminado del carrito.',
                         showConfirmButton: false,
-                        timer: 1500}
+                        timer: 1200}
 
                       )
                     }
