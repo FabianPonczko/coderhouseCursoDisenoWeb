@@ -149,9 +149,61 @@ const backupProductos = [
     "cantidad": 5,
     "imagen":"./assets/mando_1.jpeg",
     "altImagen":"Joystick"
+},
+{
+    "id":16,
+    "marca":"Galax",
+    "titulo": "Motherboard AM4 - Galax A320M",
+    "descripcion":"Dual channel, 2x DDR4 DIMM sockets hasta 32GB",
+    "precio": 8500,
+    "cantidad": 2,
+    "imagen":"./assets/motherboard_galax.jpeg",
+    "altImagen":"motherboard Galax"
+},
+{
+    "id":17,
+    "marca":"Asus",
+    "titulo": "Motherboard 1200 10°Gen - Asus Prime H410M-E",
+    "descripcion":"2 x DIMM, Max. 64GB, DDR4 2933/2800/2666/2400/2133 MHz",
+    "precio": 2500,
+    "cantidad": 3,
+    "imagen":"./assets/motherboard_asus.jpeg",
+    "altImagen":"Motherboard Asus"
+},
+{
+    "id":18,
+    "marca":"Amd",
+    "titulo": "Procesador Amd Ryzen 3 4100 4.0 Ghz - AM4 Sin Gpu OEM",
+    "descripcion":"4 nucleos, 4 mb de cache frecuencia 4.0MHz",
+    "precio": 25000,
+    "cantidad": 3,
+    "imagen":"./assets/Procesador-Amd-Ryzen-3.jpeg",
+    "altImagen":"Procesador Ryzen"
+},
+{
+    "id":19,
+    "marca":"Seagate",
+    "titulo": "Disco Rigido 1Tb Seagate Barracuda",
+    "descripcion":"SATA III 1 TB velocidad 210 MB/s cache: 64MB",
+    "precio": 9000,
+    "cantidad": 3,
+    "imagen":"./assets/disco-1tb.jpeg",
+    "altImagen":"Disco Rigido"
+},
+{
+    "id":20,
+    "marca":"Geforce",
+    "titulo": "Placa De Video GeForce GT 1030",
+    "descripcion":"GeForce GT 1030 Low Profile D4 2G 2Gb Gigabyte Low Profile DDR4",
+    "precio": 42000,
+    "cantidad": 1,
+    "imagen":"./assets/placa-video-1030.jpeg",
+    "altImagen":"Disco Rigido"
 }
 
+
 ]
+
 
 //generar paginas 1,2.3 para vistas de 5 productos en las cart
 let paguinaVista = 0 
@@ -159,6 +211,7 @@ const contenedorProduction = document.querySelector(".container")
 const pageLink1 = document.querySelector(".page-item1")
 const pageLink2 = document.querySelector(".page-item2")
 const pageLink3 = document.querySelector(".page-item3")
+const pageLink4 = document.querySelector(".page-item4")
 const pageLink_L = document.querySelector(".page-link-L")
 const pageLink_R = document.querySelector(".page-link-R")
 
@@ -167,6 +220,7 @@ function paginaActiva (){
     pageLink1.classList.remove("active")
     pageLink2.classList.remove("active")
     pageLink3.classList.remove("active")
+    pageLink4.classList.remove("active")
         switch (paguinaVista){
             case 0: 
                 pageLink1.classList.add("active")
@@ -177,6 +231,9 @@ function paginaActiva (){
             case 2:
                 pageLink3.classList.add("active")
             break
+            case 3:
+                pageLink4.classList.add("active")
+            break
         }
 }
 
@@ -186,6 +243,7 @@ function paginaActiva (){
                 pageLink1.classList.add("active")
                 pageLink2.classList.remove("active")
                 pageLink3.classList.remove("active")
+                pageLink4.classList.remove("active")
                 paguinaVista=0
                 creaRow(paguinaVista)
                 cargarAlCarrito()
@@ -196,6 +254,7 @@ function paginaActiva (){
                 pageLink2.classList.add("active")
                 pageLink1.classList.remove("active")           
                 pageLink3.classList.remove("active")
+                pageLink4.classList.remove("active")
                 paguinaVista=1
                 creaRow(paguinaVista)
                 cargarAlCarrito()
@@ -206,11 +265,23 @@ function paginaActiva (){
                 pageLink3.classList.add("active")
                 pageLink1.classList.remove("active")           
                 pageLink2.classList.remove("active")
+                pageLink4.classList.remove("active")
                 paguinaVista=2
                 creaRow(paguinaVista)
                 cargarAlCarrito()
             }
     })
+    pageLink4.addEventListener("click",()=>{
+        if (!pageLink4.classList.contains("active")){
+            pageLink4.classList.add("active")
+            pageLink1.classList.remove("active")           
+            pageLink2.classList.remove("active")
+            pageLink3.classList.remove("active")
+            paguinaVista=3
+            creaRow(paguinaVista)
+            cargarAlCarrito()
+        }
+})
 
     //Eventos click en flechas
     pageLink_L.addEventListener("click",()=>{
@@ -222,7 +293,7 @@ function paginaActiva (){
         }
     })
     pageLink_R.addEventListener("click",()=>{
-        if (paguinaVista<2){
+        if (paguinaVista<3){
             paguinaVista ++
             creaRow(paguinaVista)
             cargarAlCarrito()
@@ -234,7 +305,8 @@ function paginaActiva (){
     const productoRow1 = backupProductos.slice(0,5)
     const productoRow2 = backupProductos.slice(5,10)
     const productoRow3 = backupProductos.slice(10,15)
-    const listaProducto = [productoRow1,productoRow2,productoRow3]
+    const productoRow4 = backupProductos.slice(15,20)
+    const listaProducto = [productoRow1,productoRow2,productoRow3,productoRow4]
     
     //Clase principal para crear nuevos productos
     class Productos {
@@ -269,7 +341,7 @@ function paginaActiva (){
         listaProducto[paguinaVista].forEach((e)=>{
             containerRow.innerHTML +=`
                 <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 fade-in">
+                    <div class="card mb-4 rounded-2 fade-in" >
                         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal${e.id}" style="height:20rem;">
                         <img src=${e.imagen} class="img-fluid" alt=${e.altImagen}>
                         <h5>${e.titulo}</h5>

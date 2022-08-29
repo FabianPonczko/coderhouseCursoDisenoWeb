@@ -13,8 +13,8 @@ body {
 
   .form-control{
     width: 32vw;
+    
   }
- 
 
 
 .carrito-contenedor{
@@ -24,6 +24,7 @@ body {
   }
 
 .carrito{
+  display: contents;
   background-color:white;
   min-height: 70vh; 
   width: 55vw;
