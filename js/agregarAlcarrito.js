@@ -11,6 +11,7 @@ function cargarAlCarrito (){
     //Variables
     let contenedorCarrito =[]
     let numeroCarrito=0
+    let itemEncontrado=[]
 
     //Obtener el storage
     const storage = JSON.parse(localStorage.getItem("carrito"))||localStorage.setItem("carrito",JSON.stringify([])) 
@@ -43,10 +44,13 @@ function cargarAlCarrito (){
     const containerBusqueda = document.querySelector(".contBusqueda")
     const itemBuscado = document.getElementById("inputBuscado")
     const containerModalCart = document.querySelector(".modal-cart")
+    const btnSearch = document.querySelector(".btn-outline-success")
+    
     
     itemBuscado.addEventListener("input",(e)=>{    
             buscando = itemBuscado.value
             const encontrado = backupProductos.filter((ele=>ele.titulo.toUpperCase().includes(itemBuscado.value.toUpperCase())))
+            itemEncontrado =encontrado
             containerBusqueda.innerHTML=""
             
         if (buscando.length>1){   
@@ -69,8 +73,10 @@ function cargarAlCarrito (){
                             </div>
                         </button>`
                 containerBusqueda.appendChild(productos)
+           
             })
-            
+           
+
             containerModalCart.innerHTML =``
             backupProductos.forEach((e)=>{
                 containerModalCart.innerHTML +=` 
@@ -95,10 +101,17 @@ function cargarAlCarrito (){
                     </div>`
                     
             actualizo()
-            })      
+            }) 
+                   
+          
         }
+        btnSearch.addEventListener("click",(e)=>{
+            containerBusqueda.innerHTML=""
+            itemBuscado.value=""
+            creaRow(0,itemEncontrado)
+        })     
     })
-            
+  
 
     actualizo()
     function actualizo(){
@@ -175,4 +188,5 @@ function cargarAlCarrito (){
 
             })
     }
+     
 }

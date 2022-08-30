@@ -306,7 +306,7 @@ function paginaActiva (){
     const productoRow2 = backupProductos.slice(5,10)
     const productoRow3 = backupProductos.slice(10,15)
     const productoRow4 = backupProductos.slice(15,20)
-    const listaProducto = [productoRow1,productoRow2,productoRow3,productoRow4]
+    let listaProducto = [productoRow1,productoRow2,productoRow3,productoRow4]
     
     //Clase principal para crear nuevos productos
     class Productos {
@@ -330,7 +330,7 @@ function paginaActiva (){
 
     creaRow(paguinaVista)
      
-    function creaRow(paguinaVista){        
+    function creaRow(paguinaVista,encontrado){   
         const containerModalCart = document.querySelector(`.modal-cart`)
         
         //const containerRow = contenedorProduction.querySelector(`.row${indice}`)
@@ -338,10 +338,47 @@ function paginaActiva (){
         containerRow.innerHTML =``
         containerModalCart.innerHTML =``
         //cadaProducto.forEach((e,indice)=>{
-        listaProducto[paguinaVista].forEach((e)=>{
+        if (encontrado){
+            encontrado.forEach((e)=>{
+                containerRow.innerHTML +=`
+                    <div class="col-12 col-md-6 col-lg">
+                        <div class="card mb-4 rounded-2 fade-in">
+                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal${e.id}" style="height:20rem;">
+                            <img src=${e.imagen} class="img-fluid" alt=${e.altImagen}>
+                            <h5>${e.titulo}</h5>
+                            <p>${e.descripcion}</p>
+                            </button>  
+                        </div>
+                    </div>
+                    `
+                    containerModalCart.innerHTML +=` 
+                    <div class="modal fade" id="exampleModal${e.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <p class ="id visually-hidden">${e.id}</p>
+                            <div class="modal-header flex-column">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h5 class="modal-title" id="exampleModalLabel${e.id}">${e.titulo}</h5>
+                                <img src=${e.imagen} class="img-fluid" alt=${e.altImagen} >
+                            </div>
+                            <div class="modal-body">
+                                <p>${e.descripcion}</p>
+                                <p>Llevalo por $<span class="precio">${e.precio}</span>  -  contado</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agregar Al Carrito</button>
+                            </div>
+                        </div>
+                    </div>`
+            })
+            
+        } else  {
+        console.log("en el else")
+            listaProducto[paguinaVista].forEach((e)=>{
             containerRow.innerHTML +=`
                 <div class="col-12 col-md-6 col-lg">
-                    <div class="card mb-4 rounded-2 fade-in" >
+                    <div class="card mb-4 rounded-2 fade-in">
                         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal${e.id}" style="height:20rem;">
                         <img src=${e.imagen} class="img-fluid" alt=${e.altImagen}>
                         <h5>${e.titulo}</h5>
@@ -349,8 +386,9 @@ function paginaActiva (){
                         </button>  
                     </div>
                 </div>
-                `
-            containerModalCart.innerHTML +=` 
+               `
+        
+                containerModalCart.innerHTML +=` 
                 <div class="modal fade" id="exampleModal${e.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -371,6 +409,7 @@ function paginaActiva (){
                     </div>
                 </div>`
         })
+        }
     }
 
 
