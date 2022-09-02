@@ -49,11 +49,12 @@ function cargarAlCarrito (){
     
     itemBuscado.addEventListener("input",(e)=>{    
             buscando = itemBuscado.value
-            const encontrado = backupProductos.filter((ele=>ele.titulo.toUpperCase().includes(itemBuscado.value.toUpperCase())))
+            const encontrado = backupProductos().then(e=> e.filter((ele => ele.titulo.toUpperCase().includes(itemBuscado.value.toUpperCase()))))
+            console.log(encontrado)
             itemEncontrado =encontrado
             containerBusqueda.innerHTML=""
             
-        if (buscando.length>1){   
+        if (buscando.length>1){ 
             encontrado.forEach((element)=>{
                 const productos = document.createElement("div")
                 productos.classList.add("items")
