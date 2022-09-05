@@ -1,53 +1,65 @@
 
-//Variables del storage 
+const backupProductos = async () => {
+    const responsive = await fetch("./json/productos.json")
+    const productos = await responsive.json()
+    return productos
+ }
+
 let enStorage = []
 
 //carrito en el DOM
 const carrito = document.querySelector(".carrito")
 
 actualizar()
-//funcion principal para actualizar
+
 function actualizar(){
     let total = 0
     enStorage =JSON.parse(localStorage.getItem("carrito"))
         
     //Actualizo DOM carrito con items del storage
     carrito.innerHTML=``
-    enStorage.forEach(element => {
-        const productos = document.createElement("div")
-        productos.classList.add("items")
-        productos.innerHTML =
-                            `<div class="row contenedorCarrito mb-2 text-center" style="align-items: baseline;">
-                                <p class="id visually-hidden">${element.id}</p>
-                                <div class="col-12 col-lg-2">
-                                    <img src="${element.imagen}" alt="" style="width:100px ;">
-                                </div>
-                                <div class="col-12 col-lg-4">
-                                    <p>${element.producto}</p>
-                                </div>
-                                <div class="col-12 col-lg-2 precio">
-                                    <p>$ <span class="valorPrecio">${element.precio}</span></p>
-                                </div>
-                                <div class="col-6 col-lg-2">
-                                    <input class="cantidad" type="number" min=1 value="${element.cantidad}"  style="width: 40px;">
-                                </div>
-                                <div class="col-6 col-lg-2">
-                                    <a href="#">
-                                        <span class="badge rounded-pill text-bg-danger fs-5">X</span>
-                                    </a>
-                                </div>
-                                    
-                             </div><hr>`
-                
-                carrito.appendChild(productos)
-                total += parseFloat(element.precio)*element.cantidad   
-        });
+    backupProductos().then(producto=>{  
+        enStorage.forEach(element => {
+            const encontrado = producto.filter((ele => ele.id == element.id))
+            const productosEnCarrito = document.createElement("div")
+            productosEnCarrito.classList.add("items")
+            productosEnCarrito.innerHTML =`  <div class="row contenedorCarrito mb-2 text-center" style="align-items: baseline;">
+                                    <p class="id visually-hidden">${encontrado[0].id}</p>
+                                    <div class="col-12 col-lg-2">
+                                        <img src="${encontrado[0].imagen}" alt="" style="width:100px ;">
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <p>${encontrado[0].titulo}</p>
+                                    </div>
+                                    <div class="col-12 col-lg-2 precio">
+                                        <p>$ <span class="valorPrecio">${encontrado[0].precio}</span></p>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <input class="cantidad" type="number" min=1 value="${element.cantidad}"  style="width: 40px;">
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <a href="#">
+                                            <span class="badge rounded-pill text-bg-danger fs-5">X</span>
+                                        </a>
+                                    </div>
+                                        
+                                </div><hr>`
+                    
+                    carrito.appendChild(productosEnCarrito)
+                    total += parseFloat(encontrado[0].precio)*element.cantidad   
+            })  
+        
 
         //Si carrito vacio cartel
         if (enStorage.length<1){
-            carrito.innerHTML=`<div class="col-8 offset-3 fs-5 mt-4 text-danger">
-                                <p> Ups... el carrito parece estar vacio!!!</p>
-                               </div> `
+            carrito.innerHTML=` <div class="col-12  fs-5 mt-4 text-danger text-center">
+                                    <p> Ups... el carrito parece estar vacio!!!</p>
+                                </div> 
+                                <div class="col-lg-12 text-center">
+                                    <a href="index.html">
+                                        <button type="button" class="btn btn-warning btn-lg mb-5">Siguir Comprando</button>
+                                    </a>
+                                </div>`
         //Cargo total y botones de compra
         }else{
             carrito.innerHTML +=`<div class="row justify-content-end">
@@ -55,11 +67,10 @@ function actualizar(){
                                         <p class="sumaTotal" style="
                                         text-align: center">Total: $${total}</p>
                                     </div>
-                                
                                 </div>
-                                <div class="row justify-content-evenly">
+                                <div class="row justify-content-evenly text-center">
                                     <div class="col-8 col-sm-6 col-lg-4">
-                                        <button type="button" class="btn btn-success btn-lg">Realizar Compra</button>
+                                        <button type="button" id="btnCompra" class="btn btn-success btn-lg">Realizar Compra</button>
                                     </div>
                                     <div class="col-8 col-sm-6 col-lg-4 ">
                                         <a href="index.html">
@@ -67,15 +78,23 @@ function actualizar(){
                                         </a>
                                     </div>
                                 </div>  `
+        
+            //Boton compra
+            const btnCompra = document.getElementById("btnCompra")
+            btnCompra.addEventListener("click",()=>{
+            Swal.fire('Gracias por su compra!')
+            localStorage.setItem("carrito",JSON.stringify([]))
+            actualizar()
+            })
         }
         
+      
+       
+       
         //Boton de borrar los items del carrito
         const btnBorrarItem = document.querySelectorAll(".badge")
         btnBorrarItem.forEach((element)=>{
             element.addEventListener("click",(e)=>{
-                
-                console.log("aqui")
-
                 Swal.fire({
                     title: 'Esta seguro?',
                     text: "El producto se eliminara del carrito!",
@@ -131,9 +150,9 @@ function actualizar(){
         function actualizaTotal(){
             total=0
             enStorage.forEach(e=>{                
-                total += e.precio * e.cantidad
-                totalSuma.innerHTML =`  
-                <p class="sumaTotal">Total: $${total}</p>`
+                const precioProducto = producto.filter((ele => ele.id == e.id))
+                total += precioProducto[0].precio * e.cantidad
+                totalSuma.innerHTML =`<p class="sumaTotal">Total: $${total}</p>`
             })
         }
         
@@ -142,4 +161,5 @@ function actualizar(){
         const tituloCarrito = document.querySelector("#tituloListado")
         
         pageWidth < 769 ? tituloCarrito.style.display="" : tituloCarrito.style.display= "none"
-}
+    })
+    }
