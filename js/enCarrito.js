@@ -5,7 +5,6 @@ const backupProductos = async () => {
     return productos
  }
 
-let enStorage = []
 
 //carrito en el DOM
 const carrito = document.querySelector(".carrito")
@@ -14,7 +13,7 @@ actualizar()
 
 function actualizar(){
     let total = 0
-    enStorage =JSON.parse(localStorage.getItem("carrito"))
+    const enStorage = JSON.parse(localStorage.getItem("carrito"))||[]
         
     //Actualizo DOM carrito con items del storage
     carrito.innerHTML=``
@@ -50,7 +49,7 @@ function actualizar(){
             })  
         
 
-        //Si carrito vacio cartel
+        //Si carrito vacio cartel vacio
         if (enStorage.length<1){
             carrito.innerHTML=` <div class="col-12  fs-5 mt-4 text-danger text-center">
                                     <p> Ups... el carrito parece estar vacio!!!</p>
@@ -82,9 +81,9 @@ function actualizar(){
             //Boton compra
             const btnCompra = document.getElementById("btnCompra")
             btnCompra.addEventListener("click",()=>{
-            Swal.fire('Gracias por su compra!')
-            localStorage.setItem("carrito",JSON.stringify([]))
-            actualizar()
+                Swal.fire('Gracias por su compra!')
+                localStorage.setItem("carrito",JSON.stringify([]))
+                actualizar()
             })
         }
         
@@ -122,8 +121,6 @@ function actualizar(){
                     }
                   })
 
-                
-                
                 //Actualizar el DOM despues de borrar un item
                 actualizar()
             })
@@ -162,4 +159,4 @@ function actualizar(){
         
         pageWidth < 769 ? tituloCarrito.style.display="" : tituloCarrito.style.display= "none"
     })
-    }
+}

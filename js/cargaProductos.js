@@ -1,7 +1,5 @@
 
 
-
-
  //Cargo los productos desde backend
  const backupProductos = async () => {
     const responsive = await fetch("./json/productos.json")
@@ -14,54 +12,54 @@
    let itemEncontrado=[]
 
     //Obtener el storage
-    const storage = JSON.parse(localStorage.getItem("carrito"))||localStorage.setItem("carrito",JSON.stringify([])) 
+    const storage = JSON.parse(localStorage.getItem("carrito"))||[] 
 
    //Img Carrito
     const enCarrito = document.querySelector(".encarrito")
 
     //calcula numero de productos en carrito           
-   
+    storage.forEach(elemento=>{
+        numeroCarrito += elemento.cantidad
+    })
+
     //Actualiza el DOM con items en el carrito
     if (storage){
-        storage.forEach(elemento=>{
-            numeroCarrito += elemento.cantidad
-        })
-    enCarrito.innerHTML = numeroCarrito
+        enCarrito.innerHTML = numeroCarrito
         contenedorCarrito = storage
     }
             
     
-//btn paginas 1,2.3,4 para vistas de 5 productos en las cart
-let paguinaVista = 0 
-const contenedorProduction = document.querySelector(".container")
-const pageLink1 = document.querySelector(".page-item1")
-const pageLink2 = document.querySelector(".page-item2")
-const pageLink3 = document.querySelector(".page-item3")
-const pageLink4 = document.querySelector(".page-item4")
-const pageLink_L = document.querySelector(".page-link-L")
-const pageLink_R = document.querySelector(".page-link-R")
+    //botonesn paginas 1,2,3,4 para vistas de 5 productos en las cart
+    let paguinaVista = 0 
+    const contenedorProduction = document.querySelector(".container")
+    const pageLink1 = document.querySelector(".page-item1")
+    const pageLink2 = document.querySelector(".page-item2")
+    const pageLink3 = document.querySelector(".page-item3")
+    const pageLink4 = document.querySelector(".page-item4")
+    const pageLink_L = document.querySelector(".page-link-L")
+    const pageLink_R = document.querySelector(".page-link-R")
 
-//funcion crea clase "active"
-function paginaActiva (){
-    pageLink1.classList.remove("active")
-    pageLink2.classList.remove("active")
-    pageLink3.classList.remove("active")
-    pageLink4.classList.remove("active")
-        switch (paguinaVista){
-            case 0: 
-                pageLink1.classList.add("active")
-            break
-            case 1:
-                pageLink2.classList.add("active")
-            break
-            case 2:
-                pageLink3.classList.add("active")
-            break
-            case 3:
-                pageLink4.classList.add("active")
-            break
-        }
-}
+    
+    function paginaActiva (){
+        pageLink1.classList.remove("active")
+        pageLink2.classList.remove("active")
+        pageLink3.classList.remove("active")
+        pageLink4.classList.remove("active")
+            switch (paguinaVista){
+                case 0: 
+                    pageLink1.classList.add("active")
+                break
+                case 1:
+                    pageLink2.classList.add("active")
+                break
+                case 2:
+                    pageLink3.classList.add("active")
+                break
+                case 3:
+                    pageLink4.classList.add("active")
+                break
+            }
+    }
 
     //Eventos click por paginas
     pageLink1.addEventListener("click",()=>{
@@ -103,7 +101,7 @@ function paginaActiva (){
             paguinaVista=3
             creaRow(paguinaVista)
         }
-})
+    })
 
     //Eventos click en flechas
     pageLink_L.addEventListener("click",()=>{
@@ -304,21 +302,17 @@ function paginaActiva (){
                     }
                 })     
                 btnsDecompra()
-            })
-
-            
-                
+            })   
             })
         }
     }
 
 
 function btnsDecompra(){
-
     class Carrito {
         constructor(id,cantidad=1){
-                this.id= id
-                this.cantidad = cantidad
+            this.id= id
+            this.cantidad = cantidad
         }
     }
     
@@ -331,10 +325,8 @@ function btnsDecompra(){
             const id = contenedor.querySelector(".id").textContent
                       
             //genero los item del carrito y lo cargo en el contenedor
-            
             const nuevoItem = new Carrito(id)
             if (storage){
-                console.log("contenido storage",storage)
                 for (i = 0 ;i<storage.length;i++){
                         if(storage[i].id==id){
                             storage[i].cantidad ++
@@ -377,10 +369,10 @@ function btnsDecompra(){
  })
  
 
- //btn cancelar 
+ //boton cancelar 
  const btnCancelar = document.querySelectorAll(".btn-secondary")
      btnCancelar.forEach((btn)=>{
-         btn.addEventListener("click",(event)=>{
+         btn.addEventListener("click",()=>{
              itemBuscado.value=""       
              containerBusqueda.innerHTML=""  
          })
